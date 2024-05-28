@@ -1,0 +1,12 @@
+from japper.app_config import get_page_template_config
+
+
+class {{PageName}}Model:
+    def get_data(self):
+        config = get_page_template_config('{{ page_title }}')
+        return {
+            'title': config['title'],
+            'description': config['description'],
+            'start_button': config['start_button'],
+            'image': config['image'],
+        }

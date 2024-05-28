@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "japper"
+version = "0.0.11"
+dependencies = [
+    "setuptools",
+    "pdoc3",
+    "ipyvuetify",
+    "ipywidgets",
+    "ipykernel",
+    "jinja2",
+    "rich-click",
+    "rich",
+    "pydantic"
+]
+
+requires-python = ">=3.9"
+authors = [
+    { name = "Kim, I Luk", email = "yirugi@gmail.com" },
+]
+description = "Japper"
+readme = "README.md"
+license = { text = "MIT License" }
+keywords = ["japper", 'Jupyter', 'ipyvuetify', 'voila']
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+runtime = [
+    "voila",
+    #    "jupyterlab"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.setuptools.package-data]
+#"japper" = ["**"]
+#"japper.widgets" = ["*.vue"]
+#"japper_devtools" = ["**"]
+
+#"japper_devtools.static" = ["*"]
+#"japper_devtools.static.app.assets" = ["*"]
+#"japper_devtools.static.container.dev" = ["*"]
+#"japper_devtools.static.container.prod" = ["*"]
+#"japper_devtools.static.container.appmode" = ["*"]
+#"japper_devtools.templates" = ["*"]
+#"japper_devtools.forge" = ["app.ipynb", "voila.json"]
+#"japper_devtools.forge.app" = ["*"]
+
+#"japper_devtools.forge.app.assets" = ["*"]
+#"japper_devtools.forge.page_templates" = ["*"]
+
+
+
+
+#[project.urls]
+#Homepage = "https://example.com"
+#Documentation = "https://readthedocs.org"
+#Repository = "https://github.com/me/spam.git"
+#"Bug Tracker" = "https://github.com/me/spam/issues"
+
+[project.scripts]
+japper = "japper_devtools.__main__:main"

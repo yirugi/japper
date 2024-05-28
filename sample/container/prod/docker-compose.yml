@@ -1,0 +1,16 @@
+
+name: japper_sample
+services:
+  japper_sample-prod:
+    build:
+      context: ../../
+      dockerfile: ./container/prod/Dockerfile
+    image: japper_sample
+    ports:
+      - "8888:8888"
+    environment:
+      JUPYTERHUB_USER: "jovyan"
+    # remove followings
+    volumes:
+      - ../../../:/home/jovyan/japper
+    command: ["/bin/bash", "-c", 'pip install -e /home/jovyan/japper && voila /home/jovyan/japper_app/app.ipynb --Voila.base_url="/user/jovyan/"  --show_tracebacks=True --autoreload=True --no-browser --Voila.ip=0.0.0.0 --Voila.root_dir=/home/jovyan/japper_app --port=8888']

@@ -1,0 +1,35 @@
+"""
+Home Controller
+"""
+from japper import PageController
+from ..views import HomeView
+from ..models import HomeModel
+
+from japper.utils import show_page
+
+
+class HomeController(PageController):
+    def __init__(self) -> None:
+        """
+        Create a new instance of HomeController. This class is used to manage the home page of the app.
+        """
+        super().__init__()
+        self.view = HomeView()
+        self.model = HomeModel()
+
+        self.view.on('start_clicked', self.on_start_clicked)
+
+    def render(self):
+        """
+        Render the home page.
+        """
+        self.view.render(
+            welcome_title=self.model.welcome_title,
+            welcome_message=self.model.welcome_message,
+        )
+
+    def on_start_clicked(self):
+        """
+        Handle the start button click event.
+        """
+        show_page(1)

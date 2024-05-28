@@ -1,0 +1,6 @@
+browser_title: 'Japper Forge'
+favicon: 'icon.png'
+navigation_menu:
+  mode: top
+  logo: 'icon.png'
+  title: 'Japper Forge'

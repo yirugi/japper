@@ -1,0 +1,40 @@
+name: landing01
+title: Simple Landing Page
+description: A landing page with a title, description, start button and image.
+settings:
+  - name: title
+    type: textfield
+    hint: Welcome Text for the Landing Page
+    default: Welcome to Japper!
+  - name: description
+    type: textarea
+    default: This is a description text for the landing page. You can edit this text in the settings.
+  - name: start_button
+    type: switch_section
+    enabled_default: true
+    fields:
+      - name: text
+        type: textfield
+        default: Get Started
+      - name: link
+        type: textfield
+        hint: Page Name of Start Button Link (e.g. Home)
+        default: null
+  - name: image
+    type: switch_section
+    enabled_default: true
+    fields:
+      - name: file
+        type: file
+        file_type: image
+        hint: Image File
+        default: null
+      - name: width
+        type: textfield
+        default: 80%
+      - name: height
+        type: textfield
+        default: auto
+
+
+

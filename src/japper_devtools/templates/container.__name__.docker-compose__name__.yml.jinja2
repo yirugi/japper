@@ -1,0 +1,17 @@
+name: {{ project_name }}
+services:
+  {{ project_name }}-{{ env }}:
+    build:
+      context: ../../
+      dockerfile: ./container/{{ env }}/Dockerfile
+    volumes:
+          {% if env=='dev' or env=='appmode' %}- ../..:/home/jovyan/japper_app{% endif %}
+          {% if japper_dev %}- /Users/yirugi/mycloud/rcac/japper/workspace/japper:/home/jovyan/japper{% endif %}
+    ports:
+      - "8888:8888"
+      {% if env=='dev' %}- "8889:8889"{% endif %}
+    {% if japper_dev %}command: /bin/bash -c "pip install -e /home/jovyan/japper && /home/jovyan/start.sh"{% endif %}
+      {% if add_dev_env %}
+    environment:
+      JAPPER_APP_DEV: 1
+      {% endif %}

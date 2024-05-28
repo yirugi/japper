@@ -1,0 +1,8 @@
+{
+  "VoilaConfiguration": {
+    "file_allowlist": [
+      ".*"
+    ],
+    "show_tracebacks": true
+  }
+}

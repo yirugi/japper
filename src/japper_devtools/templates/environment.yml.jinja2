@@ -1,0 +1,9 @@
+name: {{ project_name }}
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - pip:
+      - japper{% if japper_runtime %}[runtime]{% endif %}
+
+  # add your dependencies here

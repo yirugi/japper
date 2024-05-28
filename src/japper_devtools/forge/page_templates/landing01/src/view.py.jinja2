@@ -1,0 +1,48 @@
+import ipyvuetify as v
+from japper import PageView
+from japper.utils import show_page, ASSETS_PATH
+
+
+class {{PageName}}View(PageView):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def render(self, title: str, description: str, image: dict, start_button: dict):
+        if start_button['enabled']:
+            btn_start = v.Btn(color='primary', children=[start_button['text']], class_='mt-10', large=True)
+            btn_start.on_event('click', lambda *_: show_page(start_button['link']))
+        else:
+            btn_start = ''
+
+        msg_section = v.Html(tag='div', children=[
+            v.Html(tag='p',
+                   class_='display-2 font-weight-bold',
+                   children=[title]),
+            v.Html(tag='p', style_='font-size:1.2em;',
+                   children=[description]),
+            btn_start
+        ])
+
+        if image['enabled'] and image['file']:
+            self.set_contents([
+                v.Row(class_='align-center justify-center', style_='width:1200px;height:60vh;margin:50px auto;',
+                      children=[
+                          v.Col(cols=7, children=[
+                              msg_section
+                          ]),
+                          v.Col(cols=4, children=[
+                              v.Img(src=ASSETS_PATH + image['file'], width=image['width'], height=image['height'],
+                                    class_='mx-auto')
+                          ]),
+                      ]),
+            ])
+        else:
+            self.set_contents([
+                v.Row(class_='align-center justify-center text-center',
+                      style_='width:1200px;height:60vh;margin:50px auto;',
+                      children=[
+                          v.Col(cols=12, children=[
+                              msg_section
+                          ]),
+                      ]),
+            ])

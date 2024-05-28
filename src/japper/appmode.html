@@ -1,0 +1,70 @@
+<!--
+    This is for appmode environment
+-->
+<html>
+
+<style>
+
+    /* only for App Mode */
+    #appmode-leave {
+        display: none;
+    }
+
+    body.appmode > #header {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    body.appmode > #header #header-container {
+        padding-left: 15px;
+        z-index: 0;
+    }
+
+    body.appmode .vuetify-styles div.v-application--wrap {
+        min-height: calc(100vh - 41px);
+    }
+
+    body.appmode #notebook-container {
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        background-color: unset;
+    }
+
+    body.appmode div.output_subarea {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    body.appmode .container {
+        width: 100%;
+    }
+
+    body.appmode div#notebook {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    body.appmode .end_space {
+        display: none;
+    }
+
+    body.appmode .v-navigation-drawer {
+        margin-top: 40px;
+    }
+
+    body.appmode .vuetify-styles .v-snack--top {
+        top: unset;
+        margin-top: 5px;
+    }
+
+    /* end - App Mode */
+</style>
+
+<script>
+    document.body.classList.add('appmode');
+
+</script>
+
+</html>

@@ -1,0 +1,13 @@
+from japper import PageController
+from ..views.{{page_name}} import {{PageName}}View
+from ..models.{{page_name}} import {{PageName}}Model
+
+
+class {{PageName}}Controller(PageController):
+    def __init__(self) -> None:
+        super().__init__()
+        self.view = {{PageName}}View()
+        self.model = {{PageName}}Model()
+
+    def render(self):
+        self.view.render()

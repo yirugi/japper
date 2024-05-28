@@ -1,0 +1,462 @@
+ Network japper_sample_default  Creating
+ Network japper_sample_default  Created
+ Container japper_sample-japper_sample-dev-1  Creating
+ Container japper_sample-japper_sample-dev-1  Created
+Attaching to japper_sample-dev-1
+japper_sample-dev-1  | Obtaining file:///home/jovyan/japper
+japper_sample-dev-1  |   Installing build dependencies: started
+japper_sample-dev-1  |   Installing build dependencies: finished with status 'done'
+japper_sample-dev-1  |   Checking if build backend supports build_editable: started
+japper_sample-dev-1  |   Checking if build backend supports build_editable: finished with status 'done'
+japper_sample-dev-1  |   Getting requirements to build editable: started
+japper_sample-dev-1  |   Getting requirements to build editable: finished with status 'done'
+japper_sample-dev-1  |   Installing backend dependencies: started
+japper_sample-dev-1  |   Installing backend dependencies: finished with status 'done'
+japper_sample-dev-1  |   Preparing editable metadata (pyproject.toml): started
+japper_sample-dev-1  |   Preparing editable metadata (pyproject.toml): finished with status 'done'
+japper_sample-dev-1  | Requirement already satisfied: setuptools in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (68.2.2)
+japper_sample-dev-1  | Collecting pdoc3 (from japper==0.0.4)
+japper_sample-dev-1  |   Downloading pdoc3-0.10.0-py3-none-any.whl (135 kB)
+japper_sample-dev-1  |      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 6.2 MB/s eta 0:00:00
+japper_sample-dev-1  | Requirement already satisfied: ipyvuetify in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (1.8.10)
+japper_sample-dev-1  | Requirement already satisfied: voila in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (0.5.5)
+japper_sample-dev-1  | Requirement already satisfied: ipywidgets in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (8.1.1)
+japper_sample-dev-1  | Requirement already satisfied: ipykernel in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (6.25.2)
+japper_sample-dev-1  | Requirement already satisfied: jinja2 in /opt/conda/lib/python3.11/site-packages (from japper==0.0.4) (3.1.2)
+japper_sample-dev-1  | Requirement already satisfied: comm>=0.1.1 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (0.1.4)
+japper_sample-dev-1  | Requirement already satisfied: debugpy>=1.6.5 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (1.8.0)
+japper_sample-dev-1  | Requirement already satisfied: ipython>=7.23.1 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (8.16.1)
+japper_sample-dev-1  | Requirement already satisfied: jupyter-client>=6.1.12 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (8.4.0)
+japper_sample-dev-1  | Requirement already satisfied: jupyter-core!=5.0.*,>=4.12 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (5.4.0)
+japper_sample-dev-1  | Requirement already satisfied: matplotlib-inline>=0.1 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (0.1.6)
+japper_sample-dev-1  | Requirement already satisfied: nest-asyncio in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (1.5.8)
+japper_sample-dev-1  | Requirement already satisfied: packaging in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (23.2)
+japper_sample-dev-1  | Requirement already satisfied: psutil in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (5.9.5)
+japper_sample-dev-1  | Requirement already satisfied: pyzmq>=20 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (25.1.1)
+japper_sample-dev-1  | Requirement already satisfied: tornado>=6.1 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (6.3.3)
+japper_sample-dev-1  | Requirement already satisfied: traitlets>=5.4.0 in /opt/conda/lib/python3.11/site-packages (from ipykernel->japper==0.0.4) (5.11.2)
+japper_sample-dev-1  | Requirement already satisfied: ipyvue<2,>=1.7 in /opt/conda/lib/python3.11/site-packages (from ipyvuetify->japper==0.0.4) (1.10.1)
+japper_sample-dev-1  | Requirement already satisfied: widgetsnbextension~=4.0.9 in /opt/conda/lib/python3.11/site-packages (from ipywidgets->japper==0.0.4) (4.0.9)
+japper_sample-dev-1  | Requirement already satisfied: jupyterlab-widgets~=3.0.9 in /opt/conda/lib/python3.11/site-packages (from ipywidgets->japper==0.0.4) (3.0.9)
+japper_sample-dev-1  | Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.11/site-packages (from jinja2->japper==0.0.4) (2.1.3)
+japper_sample-dev-1  | Requirement already satisfied: mako in /opt/conda/lib/python3.11/site-packages (from pdoc3->japper==0.0.4) (1.2.4)
+japper_sample-dev-1  | Collecting markdown>=3.0 (from pdoc3->japper==0.0.4)
+japper_sample-dev-1  |   Downloading Markdown-3.5.2-py3-none-any.whl.metadata (7.0 kB)
+japper_sample-dev-1  | Requirement already satisfied: jupyter-server<3,>=2.0.0 in /opt/conda/lib/python3.11/site-packages (from voila->japper==0.0.4) (2.8.0)
+japper_sample-dev-1  | Requirement already satisfied: jupyterlab-server<3,>=2.3.0 in /opt/conda/lib/python3.11/site-packages (from voila->japper==0.0.4) (2.25.0)
+japper_sample-dev-1  | Requirement already satisfied: nbclient<0.8,>=0.4.0 in /opt/conda/lib/python3.11/site-packages (from voila->japper==0.0.4) (0.7.4)
+japper_sample-dev-1  | Requirement already satisfied: nbconvert<8,>=6.4.5 in /opt/conda/lib/python3.11/site-packages (from voila->japper==0.0.4) (7.9.2)
+japper_sample-dev-1  | Requirement already satisfied: websockets>=9.0 in /opt/conda/lib/python3.11/site-packages (from voila->japper==0.0.4) (12.0)
+japper_sample-dev-1  | Requirement already satisfied: backcall in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (0.2.0)
+japper_sample-dev-1  | Requirement already satisfied: decorator in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (5.1.1)
+japper_sample-dev-1  | Requirement already satisfied: jedi>=0.16 in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (0.19.1)
+japper_sample-dev-1  | Requirement already satisfied: pickleshare in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (0.7.5)
+japper_sample-dev-1  | Requirement already satisfied: prompt-toolkit!=3.0.37,<3.1.0,>=3.0.30 in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (3.0.39)
+japper_sample-dev-1  | Requirement already satisfied: pygments>=2.4.0 in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (2.16.1)
+japper_sample-dev-1  | Requirement already satisfied: stack-data in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (0.6.2)
+japper_sample-dev-1  | Requirement already satisfied: pexpect>4.3 in /opt/conda/lib/python3.11/site-packages (from ipython>=7.23.1->ipykernel->japper==0.0.4) (4.8.0)
+japper_sample-dev-1  | Requirement already satisfied: python-dateutil>=2.8.2 in /opt/conda/lib/python3.11/site-packages (from jupyter-client>=6.1.12->ipykernel->japper==0.0.4) (2.8.2)
+japper_sample-dev-1  | Requirement already satisfied: platformdirs>=2.5 in /opt/conda/lib/python3.11/site-packages (from jupyter-core!=5.0.*,>=4.12->ipykernel->japper==0.0.4) (3.11.0)
+japper_sample-dev-1  | Requirement already satisfied: anyio>=3.1.0 in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (4.0.0)
+japper_sample-dev-1  | Requirement already satisfied: argon2-cffi in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (23.1.0)
+japper_sample-dev-1  | Requirement already satisfied: jupyter-events>=0.6.0 in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.8.0)
+japper_sample-dev-1  | Requirement already satisfied: jupyter-server-terminals in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.4.4)
+japper_sample-dev-1  | Requirement already satisfied: nbformat>=5.3.0 in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (5.9.2)
+japper_sample-dev-1  | Requirement already satisfied: overrides in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (7.4.0)
+japper_sample-dev-1  | Requirement already satisfied: prometheus-client in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.17.1)
+japper_sample-dev-1  | Requirement already satisfied: send2trash>=1.8.2 in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.8.2)
+japper_sample-dev-1  | Requirement already satisfied: terminado>=0.8.3 in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.17.1)
+japper_sample-dev-1  | Requirement already satisfied: websocket-client in /opt/conda/lib/python3.11/site-packages (from jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.6.4)
+japper_sample-dev-1  | Requirement already satisfied: babel>=2.10 in /opt/conda/lib/python3.11/site-packages (from jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (2.13.0)
+japper_sample-dev-1  | Requirement already satisfied: json5>=0.9.0 in /opt/conda/lib/python3.11/site-packages (from jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (0.9.14)
+japper_sample-dev-1  | Requirement already satisfied: jsonschema>=4.18.0 in /opt/conda/lib/python3.11/site-packages (from jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (4.19.1)
+japper_sample-dev-1  | Requirement already satisfied: requests>=2.31 in /opt/conda/lib/python3.11/site-packages (from jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (2.31.0)
+japper_sample-dev-1  | Requirement already satisfied: beautifulsoup4 in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (4.12.2)
+japper_sample-dev-1  | Requirement already satisfied: bleach!=5.0.0 in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (6.1.0)
+japper_sample-dev-1  | Requirement already satisfied: defusedxml in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (0.7.1)
+japper_sample-dev-1  | Requirement already satisfied: jupyterlab-pygments in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (0.2.2)
+japper_sample-dev-1  | Requirement already satisfied: mistune<4,>=2.0.3 in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (3.0.1)
+japper_sample-dev-1  | Requirement already satisfied: pandocfilters>=1.4.1 in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (1.5.0)
+japper_sample-dev-1  | Requirement already satisfied: tinycss2 in /opt/conda/lib/python3.11/site-packages (from nbconvert<8,>=6.4.5->voila->japper==0.0.4) (1.2.1)
+japper_sample-dev-1  | Requirement already satisfied: idna>=2.8 in /opt/conda/lib/python3.11/site-packages (from anyio>=3.1.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (3.4)
+japper_sample-dev-1  | Requirement already satisfied: sniffio>=1.1 in /opt/conda/lib/python3.11/site-packages (from anyio>=3.1.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.3.0)
+japper_sample-dev-1  | Requirement already satisfied: six>=1.9.0 in /opt/conda/lib/python3.11/site-packages (from bleach!=5.0.0->nbconvert<8,>=6.4.5->voila->japper==0.0.4) (1.16.0)
+japper_sample-dev-1  | Requirement already satisfied: webencodings in /opt/conda/lib/python3.11/site-packages (from bleach!=5.0.0->nbconvert<8,>=6.4.5->voila->japper==0.0.4) (0.5.1)
+japper_sample-dev-1  | Requirement already satisfied: parso<0.9.0,>=0.8.3 in /opt/conda/lib/python3.11/site-packages (from jedi>=0.16->ipython>=7.23.1->ipykernel->japper==0.0.4) (0.8.3)
+japper_sample-dev-1  | Requirement already satisfied: attrs>=22.2.0 in /opt/conda/lib/python3.11/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (23.1.0)
+japper_sample-dev-1  | Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /opt/conda/lib/python3.11/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (2023.7.1)
+japper_sample-dev-1  | Requirement already satisfied: referencing>=0.28.4 in /opt/conda/lib/python3.11/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (0.30.2)
+japper_sample-dev-1  | Requirement already satisfied: rpds-py>=0.7.1 in /opt/conda/lib/python3.11/site-packages (from jsonschema>=4.18.0->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (0.10.6)
+japper_sample-dev-1  | Requirement already satisfied: python-json-logger>=2.0.4 in /opt/conda/lib/python3.11/site-packages (from jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (2.0.7)
+japper_sample-dev-1  | Requirement already satisfied: pyyaml>=5.3 in /opt/conda/lib/python3.11/site-packages (from jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (6.0.1)
+japper_sample-dev-1  | Requirement already satisfied: rfc3339-validator in /opt/conda/lib/python3.11/site-packages (from jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.1.4)
+japper_sample-dev-1  | Requirement already satisfied: rfc3986-validator>=0.1.1 in /opt/conda/lib/python3.11/site-packages (from jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (0.1.1)
+japper_sample-dev-1  | Requirement already satisfied: fastjsonschema in /opt/conda/lib/python3.11/site-packages (from nbformat>=5.3.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (2.18.1)
+japper_sample-dev-1  | Requirement already satisfied: ptyprocess>=0.5 in /opt/conda/lib/python3.11/site-packages (from pexpect>4.3->ipython>=7.23.1->ipykernel->japper==0.0.4) (0.7.0)
+japper_sample-dev-1  | Requirement already satisfied: wcwidth in /opt/conda/lib/python3.11/site-packages (from prompt-toolkit!=3.0.37,<3.1.0,>=3.0.30->ipython>=7.23.1->ipykernel->japper==0.0.4) (0.2.8)
+japper_sample-dev-1  | Requirement already satisfied: charset-normalizer<4,>=2 in /opt/conda/lib/python3.11/site-packages (from requests>=2.31->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (3.3.0)
+japper_sample-dev-1  | Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/lib/python3.11/site-packages (from requests>=2.31->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (2.0.7)
+japper_sample-dev-1  | Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.11/site-packages (from requests>=2.31->jupyterlab-server<3,>=2.3.0->voila->japper==0.0.4) (2023.7.22)
+japper_sample-dev-1  | Requirement already satisfied: argon2-cffi-bindings in /opt/conda/lib/python3.11/site-packages (from argon2-cffi->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (21.2.0)
+japper_sample-dev-1  | Requirement already satisfied: soupsieve>1.2 in /opt/conda/lib/python3.11/site-packages (from beautifulsoup4->nbconvert<8,>=6.4.5->voila->japper==0.0.4) (2.5)
+japper_sample-dev-1  | Requirement already satisfied: executing>=1.2.0 in /opt/conda/lib/python3.11/site-packages (from stack-data->ipython>=7.23.1->ipykernel->japper==0.0.4) (1.2.0)
+japper_sample-dev-1  | Requirement already satisfied: asttokens>=2.1.0 in /opt/conda/lib/python3.11/site-packages (from stack-data->ipython>=7.23.1->ipykernel->japper==0.0.4) (2.4.0)
+japper_sample-dev-1  | Requirement already satisfied: pure-eval in /opt/conda/lib/python3.11/site-packages (from stack-data->ipython>=7.23.1->ipykernel->japper==0.0.4) (0.2.2)
+japper_sample-dev-1  | Requirement already satisfied: fqdn in /opt/conda/lib/python3.11/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.5.1)
+japper_sample-dev-1  | Requirement already satisfied: isoduration in /opt/conda/lib/python3.11/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (20.11.0)
+japper_sample-dev-1  | Requirement already satisfied: jsonpointer>1.13 in /opt/conda/lib/python3.11/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (2.4)
+japper_sample-dev-1  | Requirement already satisfied: uri-template in /opt/conda/lib/python3.11/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.3.0)
+japper_sample-dev-1  | Requirement already satisfied: webcolors>=1.11 in /opt/conda/lib/python3.11/site-packages (from jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.13)
+japper_sample-dev-1  | Requirement already satisfied: cffi>=1.0.1 in /opt/conda/lib/python3.11/site-packages (from argon2-cffi-bindings->argon2-cffi->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.16.0)
+japper_sample-dev-1  | Requirement already satisfied: pycparser in /opt/conda/lib/python3.11/site-packages (from cffi>=1.0.1->argon2-cffi-bindings->argon2-cffi->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (2.21)
+japper_sample-dev-1  | Requirement already satisfied: arrow>=0.15.0 in /opt/conda/lib/python3.11/site-packages (from isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (1.3.0)
+japper_sample-dev-1  | Requirement already satisfied: types-python-dateutil>=2.8.10 in /opt/conda/lib/python3.11/site-packages (from arrow>=0.15.0->isoduration->jsonschema[format-nongpl]>=4.18.0->jupyter-events>=0.6.0->jupyter-server<3,>=2.0.0->voila->japper==0.0.4) (2.8.19.14)
+japper_sample-dev-1  | Downloading Markdown-3.5.2-py3-none-any.whl (103 kB)
+japper_sample-dev-1  |    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.9/103.9 kB 18.0 MB/s eta 0:00:00
+japper_sample-dev-1  | Building wheels for collected packages: japper
+japper_sample-dev-1  |   Building editable for japper (pyproject.toml): started
+japper_sample-dev-1  |   Building editable for japper (pyproject.toml): finished with status 'done'
+japper_sample-dev-1  |   Created wheel for japper: filename=japper-0.0.4-0.editable-py3-none-any.whl size=3126 sha256=b1d0805898e3a83319876f1dd797789167ba287b4f9741b2958c400bc0832868
+japper_sample-dev-1  |   Stored in directory: /tmp/pip-ephem-wheel-cache-lvoey2xq/wheels/70/aa/44/9a4dffcd7e43efe1d8d50863b488ad1524027b8f6d2bb659fc
+japper_sample-dev-1  | Successfully built japper
+japper_sample-dev-1  | Installing collected packages: markdown, pdoc3, japper
+japper_sample-dev-1  | Successfully installed japper-0.0.4 markdown-3.5.2 pdoc3-0.10.0
+japper_sample-dev-1  | [Voila] Looking for voila in /etc/jupyter
+japper_sample-dev-1  | [Voila] Looking for voila in /usr/local/etc/jupyter
+japper_sample-dev-1  | [Voila] Looking for voila in /opt/conda/etc/jupyter
+japper_sample-dev-1  | [Voila] Looking for voila in /home/jovyan/.local/etc/jupyter
+japper_sample-dev-1  | [Voila] Looking for voila in /home/jovyan/.jupyter
+japper_sample-dev-1  | [Voila] Looking for voila in /home/jovyan
+japper_sample-dev-1  | [Voila] using template: lab
+japper_sample-dev-1  | [Voila] template paths:
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/lab
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/lab
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/base
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/base
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/opt/conda/share/jupyter
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/usr/local/share/jupyter
+japper_sample-dev-1  | 	/usr/local/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/usr/local/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/usr/share/jupyter
+japper_sample-dev-1  | 	/usr/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/usr/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | [Voila] static paths:
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/voila/templates/lab/static
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/nbconvert/templates/lab/static
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/lab/static
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/lab/static
+japper_sample-dev-1  | 	/usr/local/share/jupyter/voila/templates/lab/static
+japper_sample-dev-1  | 	/usr/local/share/jupyter/nbconvert/templates/lab/static
+japper_sample-dev-1  | 	/usr/share/jupyter/voila/templates/lab/static
+japper_sample-dev-1  | 	/usr/share/jupyter/nbconvert/templates/lab/static
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/voila/templates/base/static
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/nbconvert/templates/base/static
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/base/static
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/base/static
+japper_sample-dev-1  | 	/usr/local/share/jupyter/voila/templates/base/static
+japper_sample-dev-1  | 	/usr/local/share/jupyter/nbconvert/templates/base/static
+japper_sample-dev-1  | 	/usr/share/jupyter/voila/templates/base/static
+japper_sample-dev-1  | 	/usr/share/jupyter/nbconvert/templates/base/static
+japper_sample-dev-1  | 	/opt/conda/lib/python3.11/site-packages/jupyter_server/static
+japper_sample-dev-1  | [Voila] Using /tmp to store connection files
+japper_sample-dev-1  | [Voila] Storing connection files in /tmp/voila_nxmzxwpy.
+japper_sample-dev-1  | [Voila] Serving static files from /opt/conda/lib/python3.11/site-packages/voila/static.
+japper_sample-dev-1  | [Voila] Voilà is running at:
+japper_sample-dev-1  | http://32a9e9b10feb:8888/
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.562 ServerApp] Package jupyterlab took 0.0000s to import
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.569 ServerApp] Package jupyter_lsp took 0.0071s to import
+japper_sample-dev-1  | [W 2024-02-21 05:10:25.570 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.572 ServerApp] Package jupyter_server_terminals took 0.0028s to import
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.574 ServerApp] Package nbclassic took 0.0011s to import
+japper_sample-dev-1  | [W 2024-02-21 05:10:25.575 ServerApp] A `_jupyter_server_extension_points` function was not found in nbclassic. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.575 ServerApp] Package notebook took 0.0000s to import
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.576 ServerApp] Package notebook_shim took 0.0000s to import
+japper_sample-dev-1  | [W 2024-02-21 05:10:25.576 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.664 ServerApp] Package voila.server_extension took 0.0876s to import
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.664 ServerApp] jupyter_lsp | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.667 ServerApp] jupyter_server_terminals | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.670 ServerApp] jupyterlab | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.672 ServerApp] nbclassic | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.674 ServerApp] notebook | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.675 ServerApp] Writing Jupyter server cookie secret to /home/jovyan/.local/share/jupyter/runtime/jupyter_cookie_secret
+japper_sample-dev-1  | /opt/conda/lib/python3.11/site-packages/traitlets/traitlets.py:1907: DeprecationWarning: ServerApp.token config is deprecated in jupyter-server 2.0. Use IdentityProvider.token
+japper_sample-dev-1  |   return self._get_trait_default_generator(names[0])(self)
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.843 ServerApp] notebook_shim | extension was successfully linked.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.843 ServerApp] voila.server_extension | extension was successfully linked.
+japper_sample-dev-1  | [W 2024-02-21 05:10:25.855 ServerApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.855 ServerApp] notebook_shim | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.856 ServerApp] jupyter_lsp | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.857 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+japper_sample-dev-1  | /opt/conda/lib/python3.11/site-packages/traitlets/traitlets.py:1907: DeprecationWarning: ServerApp.token config is deprecated in jupyter-server 2.0. Use IdentityProvider.token
+japper_sample-dev-1  |   return self._get_trait_default_generator(names[0])(self)
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.861 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.11/site-packages/jupyterlab
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.861 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.862 LabApp] Extension Manager is 'pypi'.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.863 ServerApp] jupyterlab | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.865 ServerApp] nbclassic | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.867 ServerApp] notebook | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp] voila.server_extension | extension was successfully loaded.
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp] Serving notebooks from local directory: /home/jovyan
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp] Jupyter Server 2.8.0 is running at:
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp] http://32a9e9b10feb:8889/lab
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp]     http://127.0.0.1:8889/lab
+japper_sample-dev-1  | [I 2024-02-21 05:10:25.869 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+japper_sample-dev-1  | [I 2024-02-21 05:10:26.211 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+japper_sample-dev-1  | [Voila] WARNING | Clearing invalid/expired login cookie username-localhost-8888
+japper_sample-dev-1  | [Voila] Generating new user for token-authenticated request: bed9935e0423409da935a3da94b04ad1
+japper_sample-dev-1  | [Voila] Paths used for configuration of page_config: 
+japper_sample-dev-1  | 	/etc/jupyter/labconfig/page_config.json
+japper_sample-dev-1  | [Voila] Paths used for configuration of page_config: 
+japper_sample-dev-1  | 	/usr/local/etc/jupyter/labconfig/page_config.json
+japper_sample-dev-1  | [Voila] Paths used for configuration of page_config: 
+japper_sample-dev-1  | 	/opt/conda/etc/jupyter/labconfig/page_config.json
+japper_sample-dev-1  | [Voila] Paths used for configuration of page_config: 
+japper_sample-dev-1  | 	/home/jovyan/.local/etc/jupyter/labconfig/page_config.json
+japper_sample-dev-1  | [Voila] Paths used for configuration of page_config: 
+japper_sample-dev-1  | 	/home/jovyan/.jupyter/labconfig/page_config.json
+japper_sample-dev-1  | [Voila] Reading path from disk: app.ipynb
+japper_sample-dev-1  | [Voila] Reading path from disk: app.ipynb
+japper_sample-dev-1  | [Voila] Reading path from disk: app.ipynb
+japper_sample-dev-1  | [Voila] Reading path from disk: app.ipynb
+japper_sample-dev-1  | [Voila] Reading path from disk: app.ipynb
+japper_sample-dev-1  | [Voila] Writing notebook-signing key to /home/jovyan/.local/share/jupyter/notebook_secret
+japper_sample-dev-1  | [Voila] WARNING | Notebook app.ipynb is not trusted
+japper_sample-dev-1  | [Voila] Found kernel python3 in /opt/conda/share/jupyter/kernels
+japper_sample-dev-1  | [Voila] Instantiating kernel 'Python 3 (ipykernel)' with kernel provisioner: local-provisioner
+japper_sample-dev-1  | [Voila] Starting kernel: ['/opt/conda/bin/python', '-m', 'ipykernel_launcher', '-f', '/tmp/voila_nxmzxwpy/kernel-787f8aff-65fe-4712-bb6c-ae707065974f.json']
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:41541
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:34345
+japper_sample-dev-1  | [Voila] Kernel started: 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] Kernel args: {'kernel_name': 'python3', 'env': {'SHELL': '/bin/bash', 'HOSTNAME': '32a9e9b10feb', 'LANGUAGE': 'en_US.UTF-8', 'NB_UID': '1000', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'PWD': '/home/jovyan', 'HOME': '/home/jovyan', 'LANG': 'en_US.UTF-8', 'NB_GID': '100', 'JAPPER_APP_DEV': 'true', 'SHLVL': '0', 'CONDA_DIR': '/opt/conda', 'JUPYTER_PORT': '8888', 'NB_USER': 'jovyan', 'LC_ALL': 'en_US.UTF-8', 'PATH': '/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DEBIAN_FRONTEND': 'noninteractive', '_': '/opt/conda/bin/voila', 'PYDEVD_USE_FRAME_EVAL': 'NO', <ENV_VARIABLE.SCRIPT_NAME: 'SCRIPT_NAME'>: '/', <ENV_VARIABLE.PATH_INFO: 'PATH_INFO'>: '', <ENV_VARIABLE.QUERY_STRING: 'QUERY_STRING'>: 'debug', <ENV_VARIABLE.SERVER_SOFTWARE: 'SERVER_SOFTWARE'>: 'voila/0.5.5', <ENV_VARIABLE.SERVER_PROTOCOL: 'SERVER_PROTOCOL'>: 'HTTP/1.1', <ENV_VARIABLE.SERVER_PORT: 'SERVER_PORT'>: '8888', <ENV_VARIABLE.SERVER_NAME: 'SERVER_NAME'>: 'localhost', <ENV_VARIABLE.VOILA_PREHEAT: 'VOILA_PREHEAT'>: 'False', <ENV_VARIABLE.VOILA_BASE_URL: 'VOILA_BASE_URL'>: '/', <ENV_VARIABLE.VOILA_SERVER_URL: 'VOILA_SERVER_URL'>: '/', <ENV_VARIABLE.VOILA_REQUEST_URL: 'VOILA_REQUEST_URL'>: 'http://localhost:8888/?debug', <ENV_VARIABLE.VOILA_APP_PORT: 'VOILA_APP_PORT'>: '8888'}, 'cwd': '/home/jovyan/japper_app'}
+japper_sample-dev-1  | [Voila] Template paths:
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/lab
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/lab
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates/base
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates/base
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/home/jovyan/.local/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/opt/conda/share/jupyter
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/opt/conda/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/usr/local/share/jupyter
+japper_sample-dev-1  | 	/usr/local/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/usr/local/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | 	/usr/share/jupyter
+japper_sample-dev-1  | 	/usr/share/jupyter/voila/templates
+japper_sample-dev-1  | 	/usr/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | [Voila] Applying preprocessor: TagRemovePreprocessor
+japper_sample-dev-1  | [Voila] Applying preprocessor: RegexRemovePreprocessor
+japper_sample-dev-1  | [Voila] Applying preprocessor: coalesce_streams
+japper_sample-dev-1  | [Voila] Applying preprocessor: HighlightMagicsPreprocessor
+japper_sample-dev-1  | [Voila] Applying preprocessor: CSSHTMLHeaderPreprocessor
+japper_sample-dev-1  | [Voila] Attempting to load template index.html.j2
+japper_sample-dev-1  | [Voila]     template_paths: /opt/conda/share/jupyter/voila/templates/lab:/opt/conda/share/jupyter/nbconvert/templates/lab:/opt/conda/share/jupyter/voila/templates/base:/opt/conda/share/jupyter/nbconvert/templates/base:/home/jovyan/.local/share/jupyter:/home/jovyan/.local/share/jupyter/voila/templates:/home/jovyan/.local/share/jupyter/nbconvert/templates:/opt/conda/share/jupyter:/opt/conda/share/jupyter/voila/templates:/opt/conda/share/jupyter/nbconvert/templates:/usr/local/share/jupyter:/usr/local/share/jupyter/voila/templates:/usr/local/share/jupyter/nbconvert/templates:/usr/share/jupyter:/usr/share/jupyter/voila/templates:/usr/share/jupyter/nbconvert/templates
+japper_sample-dev-1  | [Voila] connecting iopub channel to tcp://127.0.0.1:34345
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:34345
+japper_sample-dev-1  | [Voila] connecting shell channel to tcp://127.0.0.1:42553
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:42553
+japper_sample-dev-1  | [Voila] connecting stdin channel to tcp://127.0.0.1:46977
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:46977
+japper_sample-dev-1  | [Voila] connecting heartbeat channel to tcp://127.0.0.1:37255
+japper_sample-dev-1  | [Voila] connecting control channel to tcp://127.0.0.1:41541
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:41541
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (starting)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] Executing cell:
+japper_sample-dev-1  | from app import AppMain
+japper_sample-dev-1  | 
+japper_sample-dev-1  | app = AppMain()
+japper_sample-dev-1  | app.start()
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: execute_input
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: execute_input
+japper_sample-dev-1  | [Voila] msg_type: status
+japper_sample-dev-1  | [Voila] content: {'execution_state': 'busy'}
+japper_sample-dev-1  | [Voila] msg_type: execute_input
+japper_sample-dev-1  | [Voila] content: {'code': 'from app import AppMain\n\napp = AppMain()\napp.start()', 'execution_count': 1}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': None}, 'buffer_paths': []}, 'comm_id': '2485913332124ce6968d495f1f644357', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': 'jupyter-vue', '_model_module_version': '^1.10.1', '_model_name': 'ForceLoadModel', '_view_count': None, '_view_module': None, '_view_module_version': '', '_view_name': None, 'layout': 'IPY_MODEL_2485913332124ce6968d495f1f644357', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': 'e248e53057b14588b66cf0ef5aa083e1', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': 'jupyter-vuetify', '_model_module_version': '^1.8.10', '_model_name': 'ThemeModel', '_view_count': None, '_view_module': None, '_view_module_version': '^1.8.10', '_view_name': None, 'dark': None}, 'buffer_paths': []}, 'comm_id': '47b0a779003d4b1793bb518758fceca8', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': 'jupyter-vuetify', '_model_module_version': '^1.8.10', '_model_name': 'ThemeColorsModel', '_theme_name': 'light', '_view_count': None, '_view_module': None, '_view_module_version': '^1.8.10', '_view_name': None, 'accent': '#82B1FF', 'anchor': None, 'error': '#FF5252', 'info': '#2196F3', 'primary': '#1976D2', 'secondary': '#424242', 'success': '#4CAF50', 'warning': '#FB8C00'}, 'buffer_paths': []}, 'comm_id': '880baaaaa3fa45699eba4183c80d09b4', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': 'jupyter-vuetify', '_model_module_version': '^1.8.10', '_model_name': 'ThemeColorsModel', '_theme_name': 'dark', '_view_count': None, '_view_module': None, '_view_module_version': '^1.8.10', '_view_name': None, 'accent': '#FF4081', 'anchor': None, 'error': '#FF5252', 'info': '#2196F3', 'primary': '#2196F3', 'secondary': '#424242', 'success': '#4CAF50', 'warning': '#FB8C00'}, 'buffer_paths': []}, 'comm_id': '7e304b89a8c24e52b6d08d15eaef24a9', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': '100%'}, 'buffer_paths': []}, 'comm_id': '93c7c63d15cf45e49c5833f89fd68f85', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/output', '_model_module_version': '1.0.0', '_model_name': 'OutputModel', '_view_count': None, '_view_module': '@jupyter-widgets/output', '_view_module_version': '1.0.0', '_view_name': 'OutputView', 'layout': 'IPY_MODEL_93c7c63d15cf45e49c5833f89fd68f85', 'msg_id': '', 'outputs': [], 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': '9955b303f3fa4d4fb4a5b5ecb510440a', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': 'none', 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': '80px'}, 'buffer_paths': []}, 'comm_id': 'e0b77caac38c47a4b5f7b354b5a96761', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonStyleModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'StyleView', 'button_color': None, 'font_family': None, 'font_size': None, 'font_style': None, 'font_variant': None, 'font_weight': None, 'text_color': None, 'text_decoration': None}, 'buffer_paths': []}, 'comm_id': '2874252e97a44b0392977d532c7aeed3', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_open
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'ButtonView', 'button_style': '', 'description': 'HIDE', 'disabled': False, 'icon': '', 'layout': 'IPY_MODEL_e0b77caac38c47a4b5f7b354b5a96761', 'style': 'IPY_MODEL_2874252e97a44b0392977d532c7aeed3', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': 'c90ebe6b331548988e4651242a89472e', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_msg
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': 'none', 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': '80px'}, 'buffer_paths': []}, 'comm_id': 'b3faea7c232f4b20967134753d862827', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonStyleModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'StyleView', 'button_color': None, 'font_family': None, 'font_size': None, 'font_style': None, 'font_variant': None, 'font_weight': None, 'text_color': None, 'text_decoration': None}, 'buffer_paths': []}, 'comm_id': '588d74d207624c0698d139ac2e292608', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'ButtonView', 'button_style': '', 'description': 'CLEAR', 'disabled': False, 'icon': '', 'layout': 'IPY_MODEL_b3faea7c232f4b20967134753d862827', 'style': 'IPY_MODEL_588d74d207624c0698d139ac2e292608', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': '122387a7f79b4d569ce4e7472711c212', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': 'fit-content'}, 'buffer_paths': []}, 'comm_id': '26af45933c9d4779adc0e740062dbd6a', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonStyleModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'StyleView', 'button_color': None, 'font_family': None, 'font_size': None, 'font_style': None, 'font_variant': None, 'font_weight': None, 'text_color': None, 'text_decoration': None}, 'buffer_paths': []}, 'comm_id': '21782d91b42e4ba49bb19ccbfdba9f68', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'ButtonModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'ButtonView', 'button_style': '', 'description': 'SHOW DEBUG PANEL', 'disabled': False, 'icon': '', 'layout': 'IPY_MODEL_26af45933c9d4779adc0e740062dbd6a', 'style': 'IPY_MODEL_21782d91b42e4ba49bb19ccbfdba9f68', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': 'aaedd21dff7f448dbc3df73d2b7fd340', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': '40px', 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': 'hidden', 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': None}, 'buffer_paths': []}, 'comm_id': '102c51f1f805411b9cae12d4127c04e8', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'HBoxModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'HBoxView', 'box_style': '', 'children': ['IPY_MODEL_aaedd21dff7f448dbc3df73d2b7fd340', 'IPY_MODEL_c90ebe6b331548988e4651242a89472e', 'IPY_MODEL_122387a7f79b4d569ce4e7472711c212'], 'layout': 'IPY_MODEL_102c51f1f805411b9cae12d4127c04e8', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': '504087d92b564f4c88e6d593021fdde7', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': None, 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': None}, 'buffer_paths': []}, 'comm_id': '95c64d119a694b31bf44c2956f6f93a7', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'HBoxModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'HBoxView', 'box_style': '', 'children': ['IPY_MODEL_9955b303f3fa4d4fb4a5b5ecb510440a'], 'layout': 'IPY_MODEL_95c64d119a694b31bf44c2956f6f93a7', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': '5c53f792acd24b5cb65dfc87d54142c9', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_model_module': '@jupyter-widgets/base', '_model_module_version': '2.0.0', '_model_name': 'LayoutModel', '_view_count': None, '_view_module': '@jupyter-widgets/base', '_view_module_version': '2.0.0', '_view_name': 'LayoutView', 'align_content': None, 'align_items': None, 'align_self': None, 'border_bottom': None, 'border_left': None, 'border_right': None, 'border_top': None, 'bottom': None, 'display': None, 'flex': None, 'flex_flow': None, 'grid_area': None, 'grid_auto_columns': None, 'grid_auto_flow': None, 'grid_auto_rows': None, 'grid_column': None, 'grid_gap': None, 'grid_row': None, 'grid_template_areas': None, 'grid_template_columns': None, 'grid_template_rows': None, 'height': '50px', 'justify_content': None, 'justify_items': None, 'left': None, 'margin': None, 'max_height': None, 'max_width': None, 'min_height': None, 'min_width': None, 'object_fit': None, 'object_position': None, 'order': None, 'overflow': None, 'padding': None, 'right': None, 'top': None, 'visibility': None, 'width': None}, 'buffer_paths': []}, 'comm_id': '95e62f30865e41538a2315caa08130a6', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_open
+japper_sample-dev-1  | [Voila] content: {'data': {'state': {'_dom_classes': [], '_model_module': '@jupyter-widgets/controls', '_model_module_version': '2.0.0', '_model_name': 'VBoxModel', '_view_count': None, '_view_module': '@jupyter-widgets/controls', '_view_module_version': '2.0.0', '_view_name': 'VBoxView', 'box_style': '', 'children': ['IPY_MODEL_504087d92b564f4c88e6d593021fdde7', 'IPY_MODEL_5c53f792acd24b5cb65dfc87d54142c9'], 'layout': 'IPY_MODEL_95e62f30865e41538a2315caa08130a6', 'tabbable': None, 'tooltip': None}, 'buffer_paths': []}, 'comm_id': 'fbe8ec215b204e90861b557f48951c4b', 'target_name': 'jupyter.widget', 'target_module': None}
+japper_sample-dev-1  | [Voila] msg_type: comm_msg
+japper_sample-dev-1  | [Voila] content: {'data': {'method': 'update', 'state': {'_dom_classes': ['debug-view']}, 'buffer_paths': []}, 'comm_id': 'fbe8ec215b204e90861b557f48951c4b'}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: error
+japper_sample-dev-1  | [Voila] msg_type: error
+japper_sample-dev-1  | [Voila] content: {'traceback': ['\x1b[0;31m---------------------------------------------------------------------------\x1b[0m', '\x1b[0;31mImportError\x1b[0m                               Traceback (most recent call last)', 'Cell \x1b[0;32mIn[1], line 1\x1b[0m\n\x1b[0;32m----> 1\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mapp\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m AppMain\n\x1b[1;32m      3\x1b[0m app \x1b[38;5;241m=\x1b[39m AppMain()\n\x1b[1;32m      4\x1b[0m app\x1b[38;5;241m.\x1b[39mstart()\n', 'File \x1b[0;32m~/japper_app/app/__init__.py:1\x1b[0m\n\x1b[0;32m----> 1\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mapp_main\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m AppMain\n', 'File \x1b[0;32m~/japper_app/app/app_main.py:6\x1b[0m\n\x1b[1;32m      1\x1b[0m \x1b[38;5;124;03m"""\x1b[39;00m\n\x1b[1;32m      2\x1b[0m \x1b[38;5;124;03mMain class of the app.\x1b[39;00m\n\x1b[1;32m      3\x1b[0m \x1b[38;5;124;03m"""\x1b[39;00m\n\x1b[1;32m      5\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mjapper\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m JapperAppMain\n\x1b[0;32m----> 6\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mjapper\x1b[39;00m\x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mwidgets\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m NavigationMenuItem\n\x1b[1;32m      7\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mpresenters\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m HomePresenter, WidgetsPresenter, FeaturesPresenter\n\x1b[1;32m      8\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mcommons\x1b[39;00m\x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mconfig\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m Config\n', "\x1b[0;31mImportError\x1b[0m: cannot import name 'NavigationMenuItem' from 'japper.widgets' (/home/jovyan/japper/src/japper/widgets/__init__.py)"], 'ename': 'ImportError', 'evalue': "cannot import name 'NavigationMenuItem' from 'japper.widgets' (/home/jovyan/japper/src/japper/widgets/__init__.py)"}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] msg_type: status
+japper_sample-dev-1  | [Voila] content: {'execution_state': 'idle'}
+japper_sample-dev-1  | [Voila] ERROR | Error at server while executing cell: {'cell_type': 'code', 'execution_count': 1, 'metadata': {'jupyter': {'outputs_hidden': False}, 'trusted': False, 'execution': {'iopub.status.busy': '2024-02-21T05:10:27.356110Z', 'iopub.execute_input': '2024-02-21T05:10:27.356744Z', 'iopub.status.idle': '2024-02-21T05:10:27.700285Z', 'shell.execute_reply': '2024-02-21T05:10:27.699509Z'}}, 'outputs': [{'output_type': 'error', 'ename': 'ImportError', 'evalue': "cannot import name 'NavigationMenuItem' from 'japper.widgets' (/home/jovyan/japper/src/japper/widgets/__init__.py)", 'traceback': ['\x1b[0;31m---------------------------------------------------------------------------\x1b[0m', '\x1b[0;31mImportError\x1b[0m                               Traceback (most recent call last)', 'Cell \x1b[0;32mIn[1], line 1\x1b[0m\n\x1b[0;32m----> 1\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mapp\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m AppMain\n\x1b[1;32m      3\x1b[0m app \x1b[38;5;241m=\x1b[39m AppMain()\n\x1b[1;32m      4\x1b[0m app\x1b[38;5;241m.\x1b[39mstart()\n', 'File \x1b[0;32m~/japper_app/app/__init__.py:1\x1b[0m\n\x1b[0;32m----> 1\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mapp_main\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m AppMain\n', 'File \x1b[0;32m~/japper_app/app/app_main.py:6\x1b[0m\n\x1b[1;32m      1\x1b[0m \x1b[38;5;124;03m"""\x1b[39;00m\n\x1b[1;32m      2\x1b[0m \x1b[38;5;124;03mMain class of the app.\x1b[39;00m\n\x1b[1;32m      3\x1b[0m \x1b[38;5;124;03m"""\x1b[39;00m\n\x1b[1;32m      5\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mjapper\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m JapperAppMain\n\x1b[0;32m----> 6\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01mjapper\x1b[39;00m\x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mwidgets\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m NavigationMenuItem\n\x1b[1;32m      7\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mpresenters\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m HomePresenter, WidgetsPresenter, FeaturesPresenter\n\x1b[1;32m      8\x1b[0m \x1b[38;5;28;01mfrom\x1b[39;00m \x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mcommons\x1b[39;00m\x1b[38;5;21;01m.\x1b[39;00m\x1b[38;5;21;01mconfig\x1b[39;00m \x1b[38;5;28;01mimport\x1b[39;00m Config\n', "\x1b[0;31mImportError\x1b[0m: cannot import name 'NavigationMenuItem' from 'japper.widgets' (/home/jovyan/japper/src/japper/widgets/__init__.py)"]}], 'source': 'from app import AppMain\n\napp = AppMain()\napp.start()'}
+japper_sample-dev-1  | Traceback (most recent call last):
+japper_sample-dev-1  |   File "/opt/conda/lib/python3.11/site-packages/voila/notebook_renderer.py", line 261, in _jinja_cell_generator
+japper_sample-dev-1  |     output_cell = await self.executor.execute_cell(
+japper_sample-dev-1  |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+japper_sample-dev-1  |   File "/opt/conda/lib/python3.11/site-packages/voila/execute.py", line 80, in execute_cell
+japper_sample-dev-1  |     result = await self.async_execute_cell(cell, cell_index, store_history)
+japper_sample-dev-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+japper_sample-dev-1  |   File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+japper_sample-dev-1  |     await self._check_raise_for_error(cell, cell_index, exec_reply)
+japper_sample-dev-1  |   File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+japper_sample-dev-1  |     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+japper_sample-dev-1  | nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+japper_sample-dev-1  | ------------------
+japper_sample-dev-1  | from app import AppMain
+japper_sample-dev-1  | 
+japper_sample-dev-1  | app = AppMain()
+japper_sample-dev-1  | app.start()
+japper_sample-dev-1  | ------------------
+japper_sample-dev-1  | 
+japper_sample-dev-1  | 
+japper_sample-dev-1  | [0;31m---------------------------------------------------------------------------[0m
+japper_sample-dev-1  | [0;31mImportError[0m                               Traceback (most recent call last)
+japper_sample-dev-1  | Cell [0;32mIn[1], line 1[0m
+japper_sample-dev-1  | [0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mapp[39;00m [38;5;28;01mimport[39;00m AppMain
+japper_sample-dev-1  | [1;32m      3[0m app [38;5;241m=[39m AppMain()
+japper_sample-dev-1  | [1;32m      4[0m app[38;5;241m.[39mstart()
+japper_sample-dev-1  | 
+japper_sample-dev-1  | File [0;32m~/japper_app/app/__init__.py:1[0m
+japper_sample-dev-1  | [0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mapp_main[39;00m [38;5;28;01mimport[39;00m AppMain
+japper_sample-dev-1  | 
+japper_sample-dev-1  | File [0;32m~/japper_app/app/app_main.py:6[0m
+japper_sample-dev-1  | [1;32m      1[0m [38;5;124;03m"""[39;00m
+japper_sample-dev-1  | [1;32m      2[0m [38;5;124;03mMain class of the app.[39;00m
+japper_sample-dev-1  | [1;32m      3[0m [38;5;124;03m"""[39;00m
+japper_sample-dev-1  | [1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mjapper[39;00m [38;5;28;01mimport[39;00m JapperAppMain
+japper_sample-dev-1  | [0;32m----> 6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mjapper[39;00m[38;5;21;01m.[39;00m[38;5;21;01mwidgets[39;00m [38;5;28;01mimport[39;00m NavigationMenuItem
+japper_sample-dev-1  | [1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mpresenters[39;00m [38;5;28;01mimport[39;00m HomePresenter, WidgetsPresenter, FeaturesPresenter
+japper_sample-dev-1  | [1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mcommons[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconfig[39;00m [38;5;28;01mimport[39;00m Config
+japper_sample-dev-1  | 
+japper_sample-dev-1  | [0;31mImportError[0m: cannot import name 'NavigationMenuItem' from 'japper.widgets' (/home/jovyan/japper/src/japper/widgets/__init__.py)
+japper_sample-dev-1  | 
+japper_sample-dev-1  | [Voila] Path jupyterlab_pygments/static/remoteEntry.aa1060b2d1221f8e5688.js served from /opt/conda/share/jupyter/labextensions/jupyterlab_pygments/static/remoteEntry.aa1060b2d1221f8e5688.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/remoteEntry.b8f540aa2b45806d9156.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/remoteEntry.b8f540aa2b45806d9156.js
+japper_sample-dev-1  | [Voila] Path @jupyter-notebook/lab-extension/static/remoteEntry.b2792fe643cae74ea824.js served from /opt/conda/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/remoteEntry.b2792fe643cae74ea824.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/remoteEntry.1ea7cdec7b0be3c5b34d.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/remoteEntry.1ea7cdec7b0be3c5b34d.js
+japper_sample-dev-1  | [Voila] Path jupyterlab_pygments/static/568.1e2faa2ba0bbe59c4780.js served from /opt/conda/share/jupyter/labextensions/jupyterlab_pygments/static/568.1e2faa2ba0bbe59c4780.js
+japper_sample-dev-1  | [Voila] Path jupyterlab_pygments/static/747.8eb3ddccc7ec4987bff9.js served from /opt/conda/share/jupyter/labextensions/jupyterlab_pygments/static/747.8eb3ddccc7ec4987bff9.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/140.81618e2257248b1f4c55.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/140.81618e2257248b1f4c55.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/353.3d1742277c7640de5c75.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/353.3d1742277c7640de5c75.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/125.465cc3afc1a74ee7901d.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/125.465cc3afc1a74ee7901d.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/144.f2941768ec558bb0d380.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/144.f2941768ec558bb0d380.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/486.653c734a29168093bd34.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/486.653c734a29168093bd34.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/848.990d0a3df76ed55b4019.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/848.990d0a3df76ed55b4019.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/635.ba9631c2c215c7a91978.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/635.ba9631c2c215c7a91978.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/701.cbac5919a0796529305e.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/701.cbac5919a0796529305e.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/925.0b9686bd690450224d01.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/925.0b9686bd690450224d01.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/102.602144dedc889a9e2f01.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/102.602144dedc889a9e2f01.js
+japper_sample-dev-1  | [Voila] Path @jupyter-notebook/lab-extension/static/928.79046a2eb17bde1af38c.js served from /opt/conda/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/928.79046a2eb17bde1af38c.js
+japper_sample-dev-1  | [Voila] Path jupyter-vue/static/261.177dafa545aa8d1bdeef.js served from /opt/conda/share/jupyter/labextensions/jupyter-vue/static/261.177dafa545aa8d1bdeef.js
+japper_sample-dev-1  | [Voila] Path jupyter-vuetify/static/261.f67c431b049461460d89.js served from /opt/conda/share/jupyter/labextensions/jupyter-vuetify/static/261.f67c431b049461460d89.js
+japper_sample-dev-1  | [Voila] Path @jupyter-notebook/lab-extension/static/568.1e7b382fb5e84b6e7620.js served from /opt/conda/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/568.1e7b382fb5e84b6e7620.js
+japper_sample-dev-1  | [Voila] Path @jupyter-notebook/lab-extension/static/922.0beff4620746e288bd5e.js served from /opt/conda/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/922.0beff4620746e288bd5e.js
+japper_sample-dev-1  | [Voila] Path @jupyter-notebook/lab-extension/static/776.c7baadfaddfd4518c935.js served from /opt/conda/share/jupyter/labextensions/@jupyter-notebook/lab-extension/static/776.c7baadfaddfd4518c935.js
+japper_sample-dev-1  | [Voila] Requesting kernel info from 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:42553
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] Received kernel info: {'status': 'ok', 'protocol_version': '5.3', 'implementation': 'ipython', 'implementation_version': '8.16.1', 'language_info': {'name': 'python', 'version': '3.11.6', 'mimetype': 'text/x-python', 'codemirror_mode': {'name': 'ipython', 'version': 3}, 'pygments_lexer': 'ipython3', 'nbconvert_exporter': 'python', 'file_extension': '.py'}, 'banner': "Python 3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]\nType 'copyright', 'credits' or 'license' for more information\nIPython 8.16.1 -- An enhanced Interactive Python. Type '?' for help.\n", 'help_links': [{'text': 'Python Reference', 'url': 'https://docs.python.org/3.11'}, {'text': 'IPython Reference', 'url': 'https://ipython.org/documentation.html'}, {'text': 'NumPy Reference', 'url': 'https://docs.scipy.org/doc/numpy/reference/'}, {'text': 'SciPy Reference', 'url': 'https://docs.scipy.org/doc/scipy/reference/'}, {'text': 'Matplotlib Reference', 'url': 'https://matplotlib.org/contents.html'}, {'text': 'SymPy Reference', 'url': 'http://docs.sympy.org/latest/index.html'}, {'text': 'pandas Reference', 'url': 'https://pandas.pydata.org/pandas-docs/stable/'}]}
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] Opening websocket /api/kernels/787f8aff-65fe-4712-bb6c-ae707065974f/channels
+japper_sample-dev-1  | [Voila] Connecting to kernel 787f8aff-65fe-4712-bb6c-ae707065974f.
+japper_sample-dev-1  | [Voila] Getting buffer for 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:34345
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:42553
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:41541
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:46977
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:42553
+japper_sample-dev-1  | [Voila] Connecting to: tcp://127.0.0.1:41541
+japper_sample-dev-1  | [Voila] Nudge: attempt 1 on kernel 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] Nudge: IOPub received: 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] Nudge: resolving iopub future: 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] Nudge: control info reply received: 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] Nudge: resolving control future: 787f8aff-65fe-4712-bb6c-ae707065974f
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: comm_msg
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (busy)
+japper_sample-dev-1  | [Voila] activity on 787f8aff-65fe-4712-bb6c-ae707065974f: status (idle)
+Gracefully stopping... (press Ctrl+C again to force)
+ Container japper_sample-japper_sample-dev-1  Stopping
+ Container japper_sample-japper_sample-dev-1  Stopped
+canceled

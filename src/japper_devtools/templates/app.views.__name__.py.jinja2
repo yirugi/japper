@@ -1,0 +1,17 @@
+"""
+{{page_name}} View
+This is the view for the {{page_name}} page. You can add your custom widgets and layout to this class. The render method is
+called by the controller when the page is loaded.
+"""
+import ipyvuetify as v
+from japper import PageView
+
+
+class {{page_name}}View(PageView):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def render(self):
+        self.set_contents(
+            v.Html(tag='h1', children=['{{page_name}}'])
+        )

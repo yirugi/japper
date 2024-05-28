@@ -1,0 +1,19 @@
+"""
+Main class of the app.
+"""
+
+from japper import JapperAppMain
+
+
+class AppMain(JapperAppMain):
+    """
+    Main class of the app. It is responsible for starting the app and setting up the navigation menu.
+    """
+
+    def start(self):
+        """
+        Init and Start the app
+        """
+        self.init_app({% if mygeohub %}mygeohub_tool=True{% endif %})
+
+        self.start_app()

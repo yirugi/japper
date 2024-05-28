@@ -1,0 +1,12 @@
+import ipyvuetify as v
+from japper import PageView
+
+
+class {{PageName}}View(PageView):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def render(self):
+        self.set_contents(
+            v.Html(tag='h1', children=['{{page_title}}'])
+        )

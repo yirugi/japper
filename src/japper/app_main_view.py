@@ -1,6 +1,6 @@
 import ipyvuetify as v
 
-from .widgets import LoadingDialog, ToastAlert
+from .widgets import LoadingDialog, ToastAlert, PopupAlert
 from .style import JapperStyle, set_style
 from .debug import is_dev, debug
 
@@ -11,6 +11,7 @@ class AppMainView(v.App):
     def __init__(self, app_style: JapperStyle, **kwargs):
         super().__init__(**kwargs)
         self.toast_alert = None
+        self.popup_alert = None
         self.loading_dialog = None
         self.page_wrapper = None
         self.nav_menu = None
@@ -25,6 +26,7 @@ class AppMainView(v.App):
         self.page_wrapper = self.make_page_wrapper()
         self.loading_dialog = LoadingDialog()
         self.toast_alert = ToastAlert(self)
+        self.popup_alert = PopupAlert(self)
 
         self.children = [
             self.nav_menu.view if self.nav_menu is not None else '',
@@ -35,14 +37,14 @@ class AppMainView(v.App):
         # if is_dev():
         #     self.style_ += 'padding-bottom: 60px;'
 
-    def make_page_wrapper(self):
+    def make_page_wrapper(self, content=None):
         page_wrapper = v.Html(
             tag='div',
             children=[])
         page_wrapper.style_ = self.app_style.page_wrapper.to_style()
         return page_wrapper
 
-    def set_page(self, page):
+    def set_page(self, page, content=None):
         if page.hide_nav_menu:
             self.nav_menu.view.hide()
             self.app_style.page_wrapper._nav_mode = 'none'
@@ -51,7 +53,8 @@ class AppMainView(v.App):
             self.app_style.page_wrapper._nav_mode = self.nav_menu.mode
         self.page_wrapper.style_ = self.app_style.page_wrapper.to_style()
 
-        content = page.content()
+        if content is None:
+            content = page.content()
         bg_color = content.get_style('background-color')
         if bg_color is not None:
             self.page_wrapper.set_style(f'background-color: {bg_color};')

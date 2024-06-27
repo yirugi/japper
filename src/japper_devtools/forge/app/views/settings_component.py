@@ -62,6 +62,7 @@ def create_textarea(component, title, hint, change_event_handler):
 
 def create_img_input(component, hint, change_event_handler):
     img_input = ImgInput(upload_path=Config.LINKED_ASSETS_PATH,
+                         filename=component.get('filename', None),
                          preview=component.get('preview', False),
                          style_='border-radius: 5px; border: 1px solid #e0e0e0;',
                          on_change=partial(change_event_handler, component['name']),
@@ -82,7 +83,7 @@ def create_img_input(component, hint, change_event_handler):
 
 def create_select(component, change_event_handler):
     return [
-        v.BtnToggle(v_model=component.get('value', None), color='primary', dense=True, class_="mb-2",
+        v.BtnToggle(v_model=component.get('value', None), color='primary', dense=True, class_="mb-2", mandatory=True,
                     on_change=(change_event_handler, component['name']),
                     children=[
                         v.Btn(value=option['value'],
@@ -201,6 +202,9 @@ def update_page_settings(page_settings_config, settings_view):
 def create_app_pages_setting(component, settings_view):
     settings_view.page_list_wrapper = v.ListItemGroup(
         color='primary',
+        mandatory=True,
+        v_model=None,
+        on_change=(settings_view.emit, 'page_list_changed'),
         children=[]
     )
 

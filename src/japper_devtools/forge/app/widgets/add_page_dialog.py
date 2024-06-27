@@ -117,9 +117,12 @@ class AddPageDialog(v.Dialog, JapperEvents):
                     v.Divider(),
 
                     v.Container(
-                        class_='d-flex justify-end px-0',
+                        class_='d-flex px-0',
                         # style_='margin-top:20px;',
                         children=[
+                            v.Html(tag='div', style_='font-size:1em;padding:5px 0;color:grey;',
+                                   children=['This change will be applied to your app immediately.']),
+                            v.Spacer(),
                             self.btn_add,
                             v.Btn(class_='ml-3', color='default', children=['Close'],
                                   on_click=self.close)

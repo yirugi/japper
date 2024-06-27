@@ -1,7 +1,8 @@
 from japper import PageController
+{% if not preview %}
 from ..views.{{page_name}} import {{PageName}}View
 from ..models.{{page_name}} import {{PageName}}Model
-
+{% endif %}
 
 class {{PageName}}Controller(PageController):
     def __init__(self) -> None:

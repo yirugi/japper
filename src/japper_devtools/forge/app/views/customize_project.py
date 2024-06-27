@@ -8,6 +8,7 @@ from japper.widgets import NavigationMenu
 from japper.app_config import AppConfig
 
 from ..commons.config import Config
+from ..commons.utils import render_page_template_preview
 from ..widgets import AddPageDialog
 from .settings_component import create_settings_components, update_page_list, update_page_settings
 
@@ -34,6 +35,8 @@ class CustomizeProjectView(PageView):
         self.preview = ''
         self.app_preview = None
 
+        self.selected_page = 0
+
         self.img_inputs = {}
 
     def create_settings_panel(self, setting_panels_info: list):
@@ -56,8 +59,16 @@ class CustomizeProjectView(PageView):
                    'border-right: 1px solid #bebebe;height: 100%;overflow-y: auto;',
             children=[])
 
-    def update_preview_app(self, app_config: AppConfig):
-        nav_menu_section = ''
+    def update_preview_app(self, app_config: AppConfig, page_index=None):
+        if page_index is None:
+            page_index = self.selected_page
+        else:
+            self.selected_page = page_index
+
+        app = AppMainView(app_config.style)
+
+        # navigation menu
+        # nav_menu_section = ''
         if app_config.navigation_menu.enabled:
             nav_menu = NavigationMenu(
                 style=app_config.style.navigation_menu,
@@ -71,9 +82,33 @@ class CustomizeProjectView(PageView):
                 nav_menu.add_menu(
                     Page(name=page.title, controller=None, icon=page.icon, hide_from_menu=page.hide_from_menu))
             nav_menu.render()
-            nav_menu_section = nav_menu.view
+            # nav_menu_section = nav_menu.view
 
-        self.preview_app.children = [nav_menu_section]
+            app.set_nav_menu(nav_menu)
+
+        app.render()
+        self.preview_app.children = [app]
+
+        if len(app_config.pages) == 0:
+            return
+
+        page_config = app_config.pages[page_index].copy()
+
+        # replace image file source to src from img_input
+        # pages.Home.template.data.image.file
+        for component_name, img_input in self.img_inputs.items():
+            name_tokens = component_name.split('.')
+            if name_tokens[0] == 'pages':
+                page_title = name_tokens[1]
+                if page_title == page_config.title:
+                    img_field_name = name_tokens[4]
+                    src = ''
+                    if img_input.file_info is not None:
+                        src = img_input.img_preview.src
+                    page_config.template.data[img_field_name]['file'] = src
+
+        app.set_page(page_config, content=render_page_template_preview(page_config, app_config.style))
+        app.page_wrapper.set_style('height: 80vh;')
 
     def update_preview_browser_tab(self, app_config: AppConfig):
         favicon = ''
@@ -90,7 +125,7 @@ class CustomizeProjectView(PageView):
         self.preview_app = v.Html(tag='div', children=[])
 
         # self.app_preview = AppMainView(AppConfig().style)
-
+        #
         # self.app_preview.set_nav_menu(self.nav_menu)
         # self.app_preview.render()
 
@@ -131,7 +166,7 @@ class CustomizeProjectView(PageView):
 
         self.preview = v.Col(
             class_='',
-            style_='padding: 20px;background-color: #e2e2e2; ',
+            style_='max-width: calc(100vw - 350px);padding: 20px;background-color: #e2e2e2; ',
             children=[
                 v.Container(
                     fluid=True,

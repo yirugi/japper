@@ -37,6 +37,7 @@ class CustomizeProjectModel:
                              'name': 'favicon',
                              'type': 'file',
                              'file_type': 'image',
+                             'filename': 'app_favicon',
                              'preview': True,
                              'hint': 'A icon that appears in the browser tab.',
                              'value': app_config.favicon
@@ -62,6 +63,7 @@ class CustomizeProjectModel:
                              'name': 'navigation_menu.logo',
                              'type': 'file',
                              'file_type': 'image',
+                             'filename': 'app_logo',
                              'preview': True,
                              'hint': 'The logo image of the navigation menu',
                              'value': app_config.navigation_menu.logo
@@ -218,13 +220,34 @@ class CustomizeProjectModel:
         return get_page_templates()
 
     def add_page(self, page_title, template_name):
-        add_page(page_title, template_name)
-        self.load_app_config()
+        new_page_config_dict = add_page(page_title, template_name)
+        new_page_config = AppConfig.Page(**new_page_config_dict)
+
+        self.app_config.pages.append(new_page_config)
+        self.app_config_dict['pages'].append(new_page_config_dict)
+
+        # self.load_app_config()
 
         self.check_and_set_default_page()
 
     def delete_page(self, page_title):
         delete_page(page_title)
-        self.load_app_config()
+        # self.load_app_config()
+
+        to_remove = []
+        for i, widget in enumerate(self.widgets_to_apply_changes):
+            if isinstance(widget['setting_name'], dict) and widget['setting_name'].get('page_title',
+                                                                                       None) == page_title:
+                to_remove.append(i)
+
+        for i in to_remove:
+            del self.widgets_to_apply_changes[i]
+
+        # remove the page from the app_config and app_config_dict
+        for i, page in enumerate(self.app_config.pages):
+            if page.title == page_title:
+                del self.app_config.pages[i]
+                del self.app_config_dict['pages'][i]
+                break
 
         self.check_and_set_default_page()

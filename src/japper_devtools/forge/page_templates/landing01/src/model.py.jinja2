@@ -1,5 +1,4 @@
-from japper.app_config import get_page_template_config
-
+{% if not preview %}from japper.app_config import get_page_template_config{% endif %}
 
 class {{PageName}}Model:
     def get_data(self):

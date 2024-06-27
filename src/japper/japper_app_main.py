@@ -126,7 +126,7 @@ class JapperAppMain:
         Add pages to the app based on the configuration
         """
         import importlib.util
-        
+
         for page_config in self.app_config.pages:
             if (spec := importlib.util.find_spec(f'app.controllers.{page_config.name}')) is not None:
                 module = importlib.util.module_from_spec(spec)
@@ -198,7 +198,8 @@ class JapperAppMain:
             self.main_view.loading_dialog.show_loading,
             self.main_view.loading_dialog.hide_loading,
             self.main_view.toast_alert.alert,
-            self.show_page
+            self.show_page,
+            self.main_view.popup_alert
         )
 
     def set_appmode(self):

@@ -21,6 +21,7 @@ class ExternalFuncs:
     hide_loading = None
     toast_alert = None
     show_page = None
+    popup_alert = None
 
 
 _nav_menu = None
@@ -56,7 +57,7 @@ def set_favicon(filepath):
     """))
 
 
-def set_external_funcs(show_loading_func, hide_loading_func, toast_alert_func, show_page_func):
+def set_external_funcs(show_loading_func, hide_loading_func, toast_alert_func, show_page_func, popup_alert_func):
     """
     The actual components and methods are implemented in the AppMainView class
     The connection is performed in the AppMainController class
@@ -65,6 +66,7 @@ def set_external_funcs(show_loading_func, hide_loading_func, toast_alert_func, s
     ExternalFuncs.hide_loading = hide_loading_func
     ExternalFuncs.toast_alert = toast_alert_func
     ExternalFuncs.show_page = show_page_func
+    ExternalFuncs.popup_alert = popup_alert_func
 
 
 def show_page(page: int | str | Page):
@@ -97,6 +99,14 @@ def toast_alert(msg, alert_type='info', icon=True):
     """
     if ExternalFuncs.toast_alert is not None:
         ExternalFuncs.toast_alert(msg, alert_type, icon)
+
+
+def popup_confirm(msg, **kwargs):
+    """
+    Show popup alert
+    """
+    if ExternalFuncs.popup_alert is not None:
+        ExternalFuncs.popup_alert.confirm(msg, **kwargs)
 
 
 def set_js_output(output):  # deprecated

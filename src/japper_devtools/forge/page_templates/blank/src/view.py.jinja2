@@ -4,7 +4,7 @@ from japper import PageView
 
 class {{PageName}}View(PageView):
     def __init__(self) -> None:
-        super().__init__()
+        super().__init__({% if preview %}custom_app_style=app_style{% endif %})
 
     def render(self):
         self.set_contents(

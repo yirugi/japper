@@ -1,5 +1,7 @@
 import os
 import yaml
+import importlib
+from japper import JapperStyle
 from jinja2 import Environment, FileSystemLoader
 
 from japper.debug import debug
@@ -175,7 +177,7 @@ def add_page(page_title, template_name):
 
     _, app_config_dict = get_app_config()
 
-    app_config_dict['pages'].append({
+    new_page_config_dict = {
         'title': page_title,
         'name': snake_page_name,
         'controller_name': f'{camel_page_name}Controller',
@@ -183,9 +185,12 @@ def add_page(page_title, template_name):
             'name': template_name,
             'data': template_default_settings
         }
-    })
+    }
 
+    app_config_dict['pages'].append(new_page_config_dict)
     save_app_config_dict(app_config_dict)
+
+    return new_page_config_dict
 
 
 def delete_page(page_title):
@@ -204,3 +209,54 @@ def delete_page(page_title):
         output_filename = os.path.join(Config.JAPPER_WORKING_DIR, 'app', template_type + 's', f'{snake_page_name}.py')
         if os.path.exists(output_filename):
             os.remove(output_filename)
+
+
+def render_page_template_preview(page: AppConfig.Page, preview_app_style: JapperStyle):
+    # if page.template.name == 'blank':
+    #     return ''
+
+    PAGE_TEMPLATE_TYPES = ['controller', 'model', 'view']
+    template_path = os.path.join(Config.PAGE_TEMPLATES_PATH, page.template.name)
+
+    rendered_pages = {}
+    env = Environment(loader=FileSystemLoader(os.path.join(template_path, 'src')))
+    for template_type in PAGE_TEMPLATE_TYPES:
+        template = env.get_template(f'{template_type}.py.jinja2')
+        rendered = template.render(page_name='template_preview', PageName='TemplatePreview', page_title=page.title,
+                                   preview=True)
+        rendered_pages[template_type] = rendered
+
+    preview_code = f"""
+template_data = None
+app_style = None
+def get_page_template_config(_):
+    return template_data
+
+{rendered_pages['model']}
+{rendered_pages['view']}
+{rendered_pages['controller']}
+
+#ASSETS_PATH = '{Config.LINKED_ASSETS_PATH}'
+ASSETS_PATH = ''
+
+def render(_template_data, _app_style):
+    global template_data, app_style
+    template_data = _template_data
+    app_style = _app_style
+
+    controller = TemplatePreviewController()
+    controller.render()
+    
+    return controller.get_content()
+    """
+
+    # debug(preview_code)
+
+    output_filename = './tmp_preview.py'
+    with open(output_filename, 'w') as file:
+        file.write(preview_code)
+
+    importlib.reload(importlib.import_module('tmp_preview'))
+    preview_render = getattr(importlib.import_module('tmp_preview'), 'render')
+
+    return preview_render(page.template.data, preview_app_style)

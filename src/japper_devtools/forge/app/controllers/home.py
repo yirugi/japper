@@ -5,7 +5,7 @@ from functools import partial
 
 from japper import PageController
 from japper.debug import debug
-from japper.utils import show_page
+from japper.utils import show_page, popup_confirm
 
 from ..views import HomeView
 from ..models import HomeModel

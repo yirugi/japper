@@ -5,7 +5,7 @@ from japper.utils import show_page, ASSETS_PATH
 
 class {{PageName}}View(PageView):
     def __init__(self) -> None:
-        super().__init__()
+        super().__init__({% if preview %}custom_app_style=app_style{% endif %})
 
     def render(self, title: str, description: str, image: dict, start_button: dict):
         if start_button['enabled']:
@@ -25,7 +25,7 @@ class {{PageName}}View(PageView):
 
         if image['enabled'] and image['file']:
             self.set_contents([
-                v.Row(class_='align-center justify-center', style_='width:1200px;height:60vh;margin:50px auto;',
+                v.Row(class_='align-center justify-center', style_='height:60vh;margin:50px auto;',
                       children=[
                           v.Col(cols=7, children=[
                               msg_section
@@ -39,7 +39,7 @@ class {{PageName}}View(PageView):
         else:
             self.set_contents([
                 v.Row(class_='align-center justify-center text-center',
-                      style_='width:1200px;height:60vh;margin:50px auto;',
+                      style_='height:60vh;margin:50px auto;',
                       children=[
                           v.Col(cols=12, children=[
                               msg_section

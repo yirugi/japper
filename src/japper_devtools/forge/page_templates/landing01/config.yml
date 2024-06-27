@@ -28,6 +28,8 @@ settings:
         type: file
         file_type: image
         hint: Image File
+        preview: true
+        filename: page_landing01_image
         default: null
       - name: width
         type: textfield

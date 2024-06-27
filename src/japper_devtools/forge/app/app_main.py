@@ -28,3 +28,8 @@ class AppMain(JapperAppMain):
         self.start_app(preload_contents=False)
         # show_page('new project')
         # show_page('customize project')
+
+
+"""
+export JAPPER_APP_DEV=1 && export JAPPER_WORKING_DIR=/Users/yirugi/mycloud/rcac/japper/workspace/japper/test/toto && voila app.ipynb --port=8890 --debug --show_tracebacks=True
+"""

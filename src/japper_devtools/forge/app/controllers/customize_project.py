@@ -1,6 +1,6 @@
 from japper import PageController
 from japper.debug import debug
-from japper.utils import show_page, toast_alert
+from japper.utils import show_page, toast_alert, popup_confirm
 
 from ..widgets.img_input import ImgInput
 from ..views import CustomizeProjectView
@@ -28,6 +28,7 @@ class CustomizeProjectController(PageController):
         self.view.on('setting_changed', self.setting_changed)
         self.view.on('save_changes_clicked', self.save_changes_clicked)
         self.view.on('page_list_button_clicked', self.page_list_button_clicked)
+        self.view.on('page_list_changed', self.page_list_changed)
         self.view.on('page_setting_back_to_page_list_clicked', self.page_setting_back_to_page_list_clicked)
         self.view.on('page_delete_clicked', self.page_delete_clicked)
         self.view.on('add_page_clicked', self.add_page_clicked)
@@ -37,7 +38,10 @@ class CustomizeProjectController(PageController):
 
     def side_menu_clicked(self, menu_name):
         if menu_name == 'dashboard':
-            show_page('home')
+            if not self.view.btn_save_changes.disabled:
+                popup_confirm("You have unsaved changes. Are you sure you want to leave?", title='Unsaved Changes?',
+                              confirm_callback=lambda: show_page('home'))
+            # show_page('home')
         else:
             self.view.show_settings_panel(menu_name)
 
@@ -46,7 +50,7 @@ class CustomizeProjectController(PageController):
         value = widget.v_model
         if isinstance(widget, ImgInput):
             value = data
-            self.model.widgets_to_apply_changes.append(widget)
+            self.model.widgets_to_apply_changes.append({'widget': widget, 'setting_name': setting_name})
 
         self.model.set_config_value(setting_name, value)
 
@@ -56,7 +60,7 @@ class CustomizeProjectController(PageController):
     def save_changes_clicked(self, *_):
         debug(f"Save changes clicked")
         for widget in self.model.widgets_to_apply_changes:
-            widget.apply_changes()
+            widget['widget'].apply_changes()
 
         # self.model.app_config.save()
         self.model.save_app_config()
@@ -84,14 +88,18 @@ class CustomizeProjectController(PageController):
         self.view.show_app_pages_page_list()
 
     def page_delete_clicked(self, page_title, *args):
-        # todo: ask to save changes
+        def delete_page():
+            self.model.delete_page(page_title)
+            self.refresh_app_pages_setting(page_list_only=True)
+            toast_alert(f"Page '{page_title}' deleted", 'success')
+
+        # TODO: remove all changes related to this page
+
         debug(f"Page delete clicked: {page_title}")
-        self.model.delete_page(page_title)
-        self.refresh_app_pages_setting()
-        toast_alert(f"Page '{page_title}' deleted", 'success')
+        popup_confirm(f"Are you sure you want to delete page '{page_title}'?", title='Delete Page?',
+                      confirm_callback=delete_page)
 
     def add_page_clicked(self, *args):
-        # todo: ask to save changes
         debug(f"Add page clicked")
         self.view.open_add_page_dialog(self.model.get_page_templates(), self.add_page)
 
@@ -110,6 +118,7 @@ class CustomizeProjectController(PageController):
 
     def refresh_app_pages_setting(self, page_list_only=False):
         self.view.update_page_list(self.model.app_config.pages)
+        # todo: show selection
         self.view.update_preview(self.model.app_config)
 
         if page_list_only:
@@ -117,3 +126,7 @@ class CustomizeProjectController(PageController):
 
         page_setting_panels_info = self.model.generate_page_setting_panels_info(self.model.app_config)
         self.view.update_page_settings(page_setting_panels_info['components'][0]['page_settings'])
+
+    def page_list_changed(self, widget, *args):
+        debug(f"Page list button changed {widget.v_model}")
+        self.view.update_preview_app(self.model.app_config, page_index=widget.v_model)

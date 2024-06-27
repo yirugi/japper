@@ -40,6 +40,7 @@ class ImgInput(v.Container, JapperEvents):
 
     def __init__(self,
                  upload_path='./',
+                 filename=None,
                  preview=False,
                  style_=None,
                  on_change: callable = None,
@@ -58,6 +59,7 @@ class ImgInput(v.Container, JapperEvents):
         self.file_input_id = f'file_upload_{uuid.uuid4().hex}'
         self.file_info = None
         self.upload_path = upload_path
+        self.fixed_filename = filename
         self.preview = preview
         self.on_change = on_change
         self.to_delete = None
@@ -119,13 +121,14 @@ class ImgInput(v.Container, JapperEvents):
 
     def show_uploaded_view(self):
         self.file_name = self.file_info['name']
+        # self.file_name = '/'.join(self.file_info['file_path'].split('/')[1:])
         self.file_size = self.file_info['size']
         if self.preview:
             if self.file_info['cache_only']:
                 encoded = base64.b64encode(self.file_info['content']).decode('utf-8')
                 src = f'data:image/{self.file_info["name"].split(".")[-1]};base64,{encoded}'
             else:
-                src = self.file_info['file_path']
+                src = self.file_info['file_path'] + '?' + str(uuid.uuid4())
             self.img_preview.src = src
             self.img_preview.show()
         else:
@@ -156,9 +159,13 @@ class ImgInput(v.Container, JapperEvents):
             self.on_change(self, 'deleted', None)
 
     def set_file(self, file_path):
+        size = 'Invalid File'
+        if os.path.exists(file_path):
+            size = format_file_size(os.path.getsize(file_path))
+
         self.file_info = {
             'name': os.path.basename(file_path),
-            'size': format_file_size(os.path.getsize(file_path)),
+            'size': size,
             'file_path': file_path,
             'content': None,
             'cache_only': False
@@ -166,10 +173,16 @@ class ImgInput(v.Container, JapperEvents):
 
     def on_file_input_changed(self, change):
         file_info = change['new'][0]
+        if self.fixed_filename:
+            file_name = self.fixed_filename + os.path.splitext(file_info['name'])[1].lower()
+            debug(file_name)
+        else:
+            file_name = file_info['name']
+
         self.file_info = {
-            'name': file_info['name'],
+            'name': file_name,
             'size': format_file_size(file_info['size']),
-            'file_path': os.path.join(self.upload_path, file_info['name']),
+            'file_path': os.path.join(self.upload_path, file_name),
             'content': None,
             'cache_only': True
         }
@@ -179,6 +192,8 @@ class ImgInput(v.Container, JapperEvents):
         self.file_info['content'] = self.file_input.get_files()[0]['file_obj'].readall()
 
         self.show_uploaded_view()
+
+        self.to_delete = None
 
         if self.on_change:
             self.on_change(self, 'uploaded', self.file_info['name'])

@@ -90,7 +90,7 @@ class CustomizeProjectController(PageController):
     def page_delete_clicked(self, page_title, *args):
         def delete_page():
             self.model.delete_page(page_title)
-            self.refresh_app_pages_setting(page_list_only=True)
+            self.refresh_app_pages_setting(page_list_only=True, forced_page_index=0)
             toast_alert(f"Page '{page_title}' deleted", 'success')
 
         # TODO: remove all changes related to this page
@@ -112,14 +112,13 @@ class CustomizeProjectController(PageController):
             raise e
             return
 
-        self.refresh_app_pages_setting()
+        self.refresh_app_pages_setting(forced_page_index=len(self.model.app_config.pages) - 1)
         # self.view.btn_save_changes.disabled = False
         toast_alert(f"Page '{page_title}' added", 'success')
 
-    def refresh_app_pages_setting(self, page_list_only=False):
+    def refresh_app_pages_setting(self, page_list_only=False, forced_page_index=None):
         self.view.update_page_list(self.model.app_config.pages)
-        # todo: show selection
-        self.view.update_preview(self.model.app_config)
+        self.view.update_preview(self.model.app_config, page_index=forced_page_index)
 
         if page_list_only:
             return

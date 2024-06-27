@@ -8,7 +8,7 @@ from japper_devtools.utils import to_camel_space, chdir
 from ..commons import Config
 from ..views import NewProjectView
 from ..models import NewProjectModel
-from ..commons.utils import link_working_dir
+from ..commons.utils import link_working_dir, add_page, get_app_config, save_app_config_dict
 
 
 class NewProjectController(PageController):
@@ -161,4 +161,10 @@ class NewProjectController(PageController):
         elif action == 'customize_project':
             show_page('customize project')
         elif action == 'use_default_config':
+            add_page('Home', 'landing01', icon='mdi-home', default=True)
+            add_page('Tool', 'blank', icon='mdi-wrench')
+
+            _, app_config_dict = get_app_config()
+            app_config_dict['pages'][0]['template']['data']['start_button']['link'] = 'Tool'
+            save_app_config_dict(app_config_dict)
             self.goto_dashboard()

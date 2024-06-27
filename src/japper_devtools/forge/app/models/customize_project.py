@@ -224,6 +224,8 @@ class CustomizeProjectModel:
         new_page_config = AppConfig.Page(**new_page_config_dict)
 
         self.app_config.pages.append(new_page_config)
+        if 'pages' not in self.app_config_dict:
+            self.app_config_dict['pages'] = []
         self.app_config_dict['pages'].append(new_page_config_dict)
 
         # self.load_app_config()

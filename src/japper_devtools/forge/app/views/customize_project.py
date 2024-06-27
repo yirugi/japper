@@ -1,5 +1,6 @@
 import ipyvuetify as v
 import ipywidgets as ipyw
+import copy
 from japper import PageView, AppMainView, Page
 from japper.debug import debug
 from japper.japper_events import JapperEvents
@@ -90,9 +91,10 @@ class CustomizeProjectView(PageView):
         self.preview_app.children = [app]
 
         if len(app_config.pages) == 0:
+            app.page_wrapper.set_style('height: 80vh;')
             return
 
-        page_config = app_config.pages[page_index].copy()
+        page_config = copy.deepcopy(app_config.pages[page_index])
 
         # replace image file source to src from img_input
         # pages.Home.template.data.image.file
@@ -228,8 +230,8 @@ class CustomizeProjectView(PageView):
 
         return default_menu_name
 
-    def update_preview(self, app_config: AppConfig):
-        self.update_preview_app(app_config)
+    def update_preview(self, app_config: AppConfig, page_index=None):
+        self.update_preview_app(app_config, page_index=page_index)
         self.update_preview_browser_tab(app_config)
 
     def render(self, app_config: AppConfig, setting_panels_info: list):

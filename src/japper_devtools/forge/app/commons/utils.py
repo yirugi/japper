@@ -151,7 +151,7 @@ def check_page_file_exists(page_title) -> (bool, str):
     return False, ''
 
 
-def add_page(page_title, template_name):
+def add_page(page_title, template_name, **kwargs):
     page_file_exists, _ = check_page_file_exists(page_title)
     if page_file_exists:
         raise ValueError(f"Page with title '{page_title}' already exists")
@@ -186,6 +186,11 @@ def add_page(page_title, template_name):
             'data': template_default_settings
         }
     }
+
+    new_page_config_dict.update(kwargs)
+
+    if 'pages' not in app_config_dict:
+        app_config_dict['pages'] = []
 
     app_config_dict['pages'].append(new_page_config_dict)
     save_app_config_dict(app_config_dict)

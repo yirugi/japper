@@ -266,7 +266,7 @@ def check_cur_conda_env(app_env_name):
 
 def build_docker_image(env, quiet=False, preview_mode=False):
     console.print('Build the Docker image', style='bold cyan')
-    cmd = f'cd container/{env} && docker-compose'
+    cmd = f'cd container/{env} && docker compose'
     if preview_mode:
         cmd += ' -f docker-compose_preview.yml'
     cmd += ' build'
@@ -325,7 +325,7 @@ def run_japper_app(cmd, verbose, japper_up_msg, check_voila_running, check_jupyt
 
 
 def get_docker_up_cmd(env, preview_mode):
-    cmd = f'cd container/{env} && docker-compose'
+    cmd = f'cd container/{env} && docker compose'
     if preview_mode:
         cmd += ' -f docker-compose_preview.yml'
     cmd += ' up --remove-orphans'

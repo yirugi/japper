@@ -118,9 +118,9 @@ def build(mode):
             console.print("This is a MyGeoHub Tool. No build is required.", style='bold yellow')
             return
 
-        if config['dev_env'] == 'conda':
+        if config['dev_env'] == 'local':
             ret = confirm(
-                "The project is set to run in conda environment. Do you want to build the production Docker image?")
+                "The project is set to run in local environment. Do you want to build the production Docker image?")
             if not ret:
                 return
 

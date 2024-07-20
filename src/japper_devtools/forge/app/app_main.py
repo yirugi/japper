@@ -1,5 +1,6 @@
 from japper import JapperAppMain
-from .controllers import HomeController, NewProjectController, CustomizeProjectController
+from .controllers import HomeController, NewProjectController, CustomizeProjectController, GenerateDocController, \
+    BuildProjectController
 from .commons.config import Config
 from japper.utils import show_page
 
@@ -13,6 +14,8 @@ def add_pages(app_main):
     app_main.add_page(name='new project', controller=NewProjectController(), hide_from_menu=True)
     app_main.add_page(name='customize project', controller=CustomizeProjectController(), hide_from_menu=True,
                       hide_nav_menu=True, always_render=True)
+    app_main.add_page(name='generate doc', controller=GenerateDocController(), hide_from_menu=True)
+    app_main.add_page(name='build project', controller=BuildProjectController(), hide_from_menu=True)
 
 
 class AppMain(JapperAppMain):

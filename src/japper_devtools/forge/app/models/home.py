@@ -24,13 +24,13 @@ class HomeModel:
         #     'page': 'run project',
         #     'disabled': False
         # },
-        # {
-        #     'title': 'Build the Project',
-        #     'description': 'Build your project to a Docker image for production deployment.',
-        #     'image': '/app/assets/card_build.jpg',
-        #     'page': 'build project',
-        #     'disabled': False
-        # },
+        {
+            'title': 'Build the Project',
+            'description': 'Build your project to a Docker image for production deployment.',
+            'image': '/app/assets/card_build.jpg',
+            'page': 'build project',
+            'disabled': False
+        },
         # {
         #     'title': 'Deploy the Project',
         #     'description': 'Deploy your project. You can deploy to Docker Hub, or a custom docker registry.',
@@ -38,13 +38,13 @@ class HomeModel:
         #     'page': 'deploy project',
         #     'disabled': False
         # },
-        # {
-        #     'title': 'Generate Documentation',
-        #     'description': 'Generate documentation automatically for your project.',
-        #     'image': '/app/assets/card_docs.jpg',
-        #     'page': 'generate docs',
-        #     'disabled': False
-        # }
+        {
+            'title': 'Generate Documentation',
+            'description': 'Generate documentation automatically for your project.',
+            'image': '/app/assets/card_docs.jpg',
+            'page': 'generate doc',
+            'disabled': False
+        }
     ]
 
     def __init__(self) -> None:

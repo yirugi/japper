@@ -41,7 +41,8 @@ class CustomizeProjectController(PageController):
             if not self.view.btn_save_changes.disabled:
                 popup_confirm("You have unsaved changes. Are you sure you want to leave?", title='Unsaved Changes?',
                               confirm_callback=lambda: show_page('home'))
-            # show_page('home')
+            else:
+                show_page('home')
         else:
             self.view.show_settings_panel(menu_name)
 

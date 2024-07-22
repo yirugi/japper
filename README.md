@@ -1,3 +1,5 @@
+![logo](/logo.png)
+
 # Japper: A framework for building Jupyter-based web applications
 
 Japper is a framework for building Jupyter-based web applications. It is designed to be a lightweight, flexible, and

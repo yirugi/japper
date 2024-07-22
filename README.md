@@ -1,4 +1,4 @@
-![logo](/logo.png)
+<img src="logo.png" alt="logo" width="150"/>
 
 # Japper: A framework for building Jupyter-based web applications
 

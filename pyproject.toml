@@ -11,6 +11,7 @@ dependencies = [
     "ipyvuetify",
     "ipywidgets",
     "ipykernel",
+    "voila",
     "jinja2",
     "rich-click",
     "rich",

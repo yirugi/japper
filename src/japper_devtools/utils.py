@@ -4,6 +4,7 @@ import os, sys
 import subprocess
 import select
 import yaml
+import webbrowser
 from jinja2 import Environment, FileSystemLoader
 from rich.prompt import Prompt, Confirm
 from rich.panel import Panel
@@ -312,6 +313,7 @@ def run_japper_app(cmd, verbose, japper_up_msg, check_voila_running, check_jupyt
                 if voila_running and jupyter_running:
                     status.update(Panel(japper_up_msg), spinner='dots', speed=0.1)
                     app_initialized = True
+                    webbrowser.open('http://localhost:8888')
 
             if process.poll() is not None:
                 break

@@ -52,6 +52,11 @@ def create_textarea(component, title, hint, change_event_handler):
                           outlined=True, hint=hint, persistent_hint=True,
                           on_change=(change_event_handler, component['name'])
                           )
+
+    debug(component)
+    if 'height' in component:
+        textarea.height = component['height']
+
     if hint is None:
         textarea.persistent_hint = False
         textarea.hide_details = True

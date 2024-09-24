@@ -1,0 +1,9 @@
+{% if not preview %}from japper.app_config import get_page_template_config{% endif %}
+
+class {{PageName}}Model:
+    def get_data(self):
+        config = get_page_template_config('{{ page_title }}')
+        return {
+            'markdown_content': config['markdown_content'],
+            'font_size': config['font_size']
+        }

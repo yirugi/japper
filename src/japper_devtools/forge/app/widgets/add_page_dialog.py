@@ -1,8 +1,9 @@
 import ipyvuetify as v
+import os
 
 from japper.japper_events import JapperEvents
 from japper_devtools.utils import has_special_chars
-from ..commons.utils import check_page_file_exists
+from ..commons.utils import check_page_file_exists, get_page_template_path
 
 from japper.debug import debug
 
@@ -34,14 +35,16 @@ class AddPageDialog(v.Dialog, JapperEvents):
             #     style_='background-color:transparent;flex: 1 1 auto;max-width:350px;padding:20px;',
             #
             # )
+            template_path = get_page_template_path(page_template['name'])
             templates.append(
                 v.ListItem(
                     on_click=(self.template_selected, page_template['name']),
                     class_='d-flex flex-column align-center',
                     style_='max-width:350px;padding:20px;',
                     children=[
-                        v.Img(style_='border:1px solid silver;',
-                              src=page_template['thumbnail']) if 'thumbnail' in page_template else
+                        v.Img(style_='border:1px solid silver;height:160px;',
+                              src=os.path.join(template_path,
+                                               page_template['thumbnail'])) if 'thumbnail' in page_template else
                         v.Html(tag='div',  # TODO: change this to image
                                style_='background-color:white;min-width:300px;height:160px;border:1px solid silver;padding-top:25%;text-align:center;',
                                children=[v.Icon(children=['mdi-plus'])]),

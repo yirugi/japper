@@ -151,6 +151,10 @@ def check_page_file_exists(page_title) -> (bool, str):
     return False, ''
 
 
+def get_page_template_path(template_name: str):
+    return os.path.join(Config.PAGE_TEMPLATES_PATH, template_name)
+
+
 def add_page(page_title, template_name, **kwargs):
     page_file_exists, _ = check_page_file_exists(page_title)
     if page_file_exists:
@@ -161,7 +165,7 @@ def add_page(page_title, template_name, **kwargs):
 
     # render and write template files
     PAGE_TEMPLATE_TYPES = ['controller', 'model', 'view']
-    template_path = os.path.join(Config.PAGE_TEMPLATES_PATH, template_name)
+    template_path = get_page_template_path(template_name)
 
     env = Environment(loader=FileSystemLoader(os.path.join(template_path, 'src')))
     for template_type in PAGE_TEMPLATE_TYPES:

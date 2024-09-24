@@ -1,6 +1,7 @@
 name: landing01
 title: Simple Landing Page
 description: A landing page with a title, description, start button and image.
+thumbnail: thumbnail.png
 settings:
   - name: title
     type: textfield

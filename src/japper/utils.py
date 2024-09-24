@@ -116,20 +116,16 @@ def set_js_output(output):  # deprecated
 
 def run_js(js):
     """
-    TODO: check if we can remove this function
-    - [ ] Is the remaining js code affects the page?
-
     Run JS code using the dedicated output widget
     This is a hack to fix the issue of the blank space at the bottom of the page when new JS is executed.
     @param js:
     @return:
     """
-    display(Javascript(js))  # voila now can handle this issue
-    # if js_output is not None:
-    #     js_output.append_display_data(Javascript(js))
-    #     js_output.clear_output()
-    # else:
-    #     display(Javascript(js))
+    if js_output is not None:
+        js_output.append_display_data(Javascript(js))
+        js_output.clear_output()
+    else:
+        display(Javascript(js))
 
 
 def run_js_with_wait(js, selector):

@@ -15,7 +15,7 @@ from .style import JapperStyle
 from .app_config import load_config, AppConfig
 
 
-def init_js_output():  # deprecated
+def init_js_output():
     """
     Initialize the output widget for JS. We need this approach to avoid blank space at the bottom of the page when
     new JS is executed.
@@ -77,6 +77,8 @@ class JapperAppMain:
 
         if add_pages:
             self.add_pages()
+
+        init_js_output()
 
     def add_navigation_menu(self, app_config: AppConfig):
         """

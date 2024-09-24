@@ -1,0 +1,59 @@
+name: markdown
+title: Rendered Markdown Page
+description: A simple page that renders markdown content.
+thumbnail: thumbnail.png
+settings:
+  - name: font_size
+    type: textfield
+    default: 16px
+    hint: The base font size for the rendered markdown content.
+  - name: markdown_content
+    type: textarea
+    height: 500px
+    default: |
+      # Markdown Page
+
+      This is a simple markdown page.
+
+      ## Subheading
+
+      This is a subheading.
+
+      ### Subsubheading
+
+      This is a subsubheading.
+
+      **Bold text**
+
+      *Italic text*
+
+      [Link](https://github.com/yirugi/japper)
+      
+      - Image
+      ![Image](https://raw.githubusercontent.com/yirugi/japper/main/logo.png)
+
+      - List item 1
+      - List item 2
+      - List item 3
+
+      `Code block`
+
+      ```python
+      def example_function():
+          return "Example"
+      ```
+
+      ---
+
+      Horizontal rule
+
+      ---
+
+
+      <div style="background-color: lightblue; padding: 10px;">
+          <p>Custom HTML</p>
+      </div>
+
+
+
+

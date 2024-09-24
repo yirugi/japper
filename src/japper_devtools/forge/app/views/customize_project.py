@@ -56,7 +56,7 @@ class CustomizeProjectView(PageView):
 
         self.setting_panel_wrapper = v.Col(
             class_='',
-            style_='min-width:250px;max-width:350px;background-color: #fafbfd; padding: 20px 20px; '
+            style_='min-width:250px;max-width:400px;background-color: #fafbfd; padding: 20px 20px; '
                    'border-right: 1px solid #bebebe;height: 100%;overflow-y: auto;',
             children=[])
 
@@ -168,7 +168,7 @@ class CustomizeProjectView(PageView):
 
         self.preview = v.Col(
             class_='',
-            style_='max-width: calc(100vw - 350px);padding: 20px;background-color: #e2e2e2; ',
+            style_='max-width: calc(100vw - 470px);padding: 20px;background-color: #e2e2e2; ',
             children=[
                 v.Container(
                     fluid=True,
@@ -184,7 +184,15 @@ class CustomizeProjectView(PageView):
                                       """,
                             children=[
                                 self.preview_browser_tab,
-                                self.preview_app
+                                self.preview_app,
+                                v.Alert(
+                                    class_='mt-3',
+                                    color='yellow',
+                                    children=[
+                                        v.Icon(left=True, children=['mdi-alert']),
+                                        'This preview is rendered only based on the template and style settings, not the actual code. Your app may look different in the runtime.'
+                                    ]
+                                )
                             ]),
                     ]),
 

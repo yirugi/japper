@@ -1,0 +1,19 @@
+import ipyvuetify as v
+import markdown
+import ipywidgets as ipyw
+from japper import PageView
+from japper.utils import show_page, ASSETS_PATH
+
+
+class {{PageName}}View(PageView):
+    def __init__(self) -> None:
+        super().__init__({% if preview %}custom_app_style=app_style{% endif %})
+
+    def render(self, markdown_content: str, font_size: str):
+        self.set_contents(
+            ipyw.HTML(
+                '<div style="font-size:' + font_size + ';line-height:2em;">' +
+                markdown.markdown(markdown_content)
+                + '</div>'
+            )
+        )

@@ -25,6 +25,7 @@ class JapperStyle(BaseModel):
         _width: str = '100%'
         _margin: str = '0 auto'
         overflow_y: str = 'auto'
+        overflow_x: str = 'hidden'
 
         # background_color: str = '#fafbfd'
 

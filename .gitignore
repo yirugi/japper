@@ -82,3 +82,6 @@ test/
 dist/
 
 /sample/
+japper_run.log
+src/japper_devtools/forge/linked_working_dir
+src/japper_devtools/forge/tmp_preview.py

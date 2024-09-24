@@ -53,7 +53,6 @@ def create_textarea(component, title, hint, change_event_handler):
                           on_change=(change_event_handler, component['name'])
                           )
 
-    debug(component)
     if 'height' in component:
         textarea.height = component['height']
 

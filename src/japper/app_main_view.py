@@ -45,12 +45,16 @@ class AppMainView(v.App):
         return page_wrapper
 
     def set_page(self, page, content=None):
-        if page.hide_nav_menu:
-            self.nav_menu.view.hide()
-            self.app_style.page_wrapper._nav_mode = 'none'
+        if self.nav_menu is not None:
+            if page.hide_nav_menu:
+                self.nav_menu.view.hide()
+                self.app_style.page_wrapper._nav_mode = 'none'
+            else:
+                self.nav_menu.view.show()
+                self.app_style.page_wrapper._nav_mode = self.nav_menu.mode
         else:
-            self.nav_menu.view.show()
-            self.app_style.page_wrapper._nav_mode = self.nav_menu.mode
+            self.app_style.page_wrapper._nav_mode = 'none'
+            
         self.page_wrapper.style_ = self.app_style.page_wrapper.to_style()
 
         if content is None:
